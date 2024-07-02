@@ -1,18 +1,26 @@
-﻿using System;
-using System.Device.Gpio;
+﻿using SanayideDijitalTeknolijiler_net8._0;
+using System;
+//using System.Device.Gpio;
 using System.Security.Cryptography.X509Certificates;
 
 namespace GpioLedExample
 {
     class Program
     {
-        public static string lastreceviedstring=string.Empty;
         static void Main(string[] args)
         {
-            
-            Console.WriteLine("Program begin");
-            TcpServer server = new TcpServer(2804);
-            server.Listen();
+
+            LogSys.InfoLog("LogSystem running");
+            Thread listenerserver_thread = new Thread(TcpServer.Listen);
+            listenerserver_thread.Start();//thread olarak tcp listener
+
+            //renk denemesi
+            LogSys.GrayLog("-------------------color board-------------------");
+            LogSys.SuccesLog("mutlu ferhat");
+            LogSys.InfoLog("düsünceli ferhat");
+            LogSys.WarnLog("gergin ferhat");
+            LogSys.ErrorLog("kızgın ferhat");
+            LogSys.GrayLog("-------------------color board-------------------");
         }
     }
 }

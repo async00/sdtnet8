@@ -8,7 +8,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
 {
     internal class EngineDrivers
     {
-        //berkay yazdı burayı
+        //tcpden gelen değere göre veri girme
 
         public static void  Engine_FORWARD()
         {

@@ -49,9 +49,17 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "System.Device.Gpio": {
+            "Unosquare.Raspberry.Abstractions": {
               "target": "Package",
-              "version": "[3.2.0, )"
+              "version": "[0.4.1, )"
+            },
+            "Unosquare.Raspberry.IO": {
+              "target": "Package",
+              "version": "[0.27.1, )"
+            },
+            "Unosquare.RaspberryIO.Peripherals": {
+              "target": "Package",
+              "version": "[0.5.0, )"
             }
           },
           "imports": [

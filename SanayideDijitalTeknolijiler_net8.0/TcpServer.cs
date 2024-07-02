@@ -1,38 +1,40 @@
 ﻿using GpioLedExample;
+using SanayideDijitalTeknolijiler_net8._0;
 using System;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using System.Xml.Linq;
 
 public class TcpServer
 {
-//BERKAY TARAFINDAN YAZILDI
-    private readonly int _port;
-    private TcpListener _server;
-    private bool _isRunning;
+    //BERKAY TARAFINDAN YAZILDI
+    private static string lastrecmessage = string.Empty;
+    private static readonly int _port=2804;
+    private static TcpListener _server;
+    private static bool _isRunning;
 
-    public TcpServer(int port)
+    internal static string GetLastMessage()
     {
-        _port = port;
+        return lastrecmessage;//en son gelen text mesajını döndür
     }
-
-    public void Listen()
+    public static void Listen()
     {
         if (_isRunning)
         {
-            Console.WriteLine("Server is already running.");
+           LogSys.WarnLog("Server is already running.");
             return;
         }
 
         try
         {
-            IPAddress localAddr = IPAddress.Parse("0.0.0.0");//LOCALHOST
+            IPAddress localAddr = IPAddress.Parse("127.0.0.1");//raspberry pide isen 0.0.0.0
             _server = new TcpListener(localAddr, _port);
             _server.Start();
             _isRunning = true;
 
-            Console.WriteLine($"TCP AÇILDI PORT :  {_port}...");
+            LogSys.SuccesLog($"Tcp server started on "+_port);
 
             while (_isRunning)
             {
@@ -40,13 +42,13 @@ public class TcpServer
                 TcpClient client = _server.AcceptTcpClient();
 
                 // Yeni bir iş parçacığı başlat
-                Thread clientThread = new Thread(() => HandleClient(client));
-                clientThread.Start();
+              
+                HandleClient(client);
             }
         }
         catch (Exception e)
         {
-            Console.WriteLine($"Exception: {e.Message}");
+           LogSys.ErrorLog($"Exception at tcp server starting: {e.Message}");
         }
         finally
         {
@@ -54,7 +56,7 @@ public class TcpServer
         }
     }
 
-    private void HandleClient(TcpClient client)
+    private static void HandleClient(TcpClient client)
     {
         using (NetworkStream stream = client.GetStream())
         {
@@ -65,21 +67,21 @@ public class TcpServer
             {
                 // Gelen veriyi ekrana yazdır
                 string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-                Console.WriteLine($"Received text: {message}");
-                Program.lastreceviedstring=message;
+                LogSys.InfoLog($"CLIENT: {message}");
+                lastrecmessage=message;
             }
         }
 
         client.Close();
     }
 
-    public void Stop()
+    public static void Stop()
     {
         if (_isRunning)
         {
             _server.Stop();
             _isRunning = false;
-            Console.WriteLine("Server stopped.");
+            LogSys.SuccesLog("Server stopped.");
         }
     }
 }
