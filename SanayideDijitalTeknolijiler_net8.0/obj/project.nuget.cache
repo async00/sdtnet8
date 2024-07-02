@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "h1flrKfLiMw=",
+  "dgSpecHash": "fHtWyg6TeaI=",
   "success": true,
   "projectFilePath": "C:\\Users\\stati\\source\\repos\\SanayideDijitalTeknolijiler_net8.0\\SanayideDijitalTeknolijiler_net8.0\\SanayideDijitalTeknolijiler_net8.0.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\stati\\.nuget\\packages\\system.device.gpio\\3.2.0\\system.device.gpio.3.2.0.nupkg.sha512"
+  ],
   "logs": []
 }
