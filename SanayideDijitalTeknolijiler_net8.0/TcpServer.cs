@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GpioLedExample;
+using System;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -6,6 +7,7 @@ using System.Threading;
 
 public class TcpServer
 {
+//BERKAY TARAFINDAN YAZILDI
     private readonly int _port;
     private TcpListener _server;
     private bool _isRunning;
@@ -25,12 +27,12 @@ public class TcpServer
 
         try
         {
-            IPAddress localAddr = IPAddress.Parse("0.0.0.0");
+            IPAddress localAddr = IPAddress.Parse("0.0.0.0");//LOCALHOST
             _server = new TcpListener(localAddr, _port);
             _server.Start();
             _isRunning = true;
 
-            Console.WriteLine($"TCP Server is running on port {_port}...");
+            Console.WriteLine($"TCP AÇILDI PORT :  {_port}...");
 
             while (_isRunning)
             {
@@ -63,7 +65,8 @@ public class TcpServer
             {
                 // Gelen veriyi ekrana yazdır
                 string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-                Console.WriteLine($"Received: {message}");
+                Console.WriteLine($"Received text: {message}");
+                Program.lastreceviedstring=message;
             }
         }
 
