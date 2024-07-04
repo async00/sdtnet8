@@ -1,5 +1,6 @@
 using System;
 using System.Device.Gpio;
+using Unosquare.RaspberryIO.Abstractions;
 
 
 
@@ -28,39 +29,27 @@ public static class GC
         {
             _gpioController.Write(pinNumber, value);
         }
-        else
-        {
-            LogSys.
-        }
+        
     }
 
-    // pini oku
-    public static PinValue ReadPin(int pinNumber)
+    // pini oku 1 veya 0 döner
+    public static int ReadPin(int pinNumber)
     {
         if (_gpioController.IsPinOpen(pinNumber))
         {
-            return _gpioController.Read(pinNumber);
+            PinValue value = _gpioController.Read(pinNumber);
+            if (value==PinValue.High)
+                return 1;    
+            return 0;
+            
         }
         else
         {
-            throw new InvalidOperationException($"Pin {pinNumber} is not open.");
+            LogSys.ErrorLog($"Pin {pinNumber} is not open.");
+            return -1;
         }
     }
 
-    // Pin'i kapatma
-    public static void ClosePin(int pinNumber)
-    {
-        if (_gpioController.IsPinOpen(pinNumber))
-        {
-            _gpioController.ClosePin(pinNumber);
-        }
-    }
-
-    // Sınıfın kullanımını sonlandırma
-    public static void Dispose()
-    {
-        _gpioController.Dispose();
-    }
 }
 
 }
