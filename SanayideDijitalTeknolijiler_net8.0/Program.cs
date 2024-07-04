@@ -26,15 +26,16 @@ namespace SanayideDijitalTeknolijiler_net8._0
             EngineDrivers.Preapare_Engine_Pins();
             
             while(true){
-                LogSys.ErrorLog(TcpServer.GetLastMessage());
-                if("fw"==TcpServer.GetLastMessage()){
+                if(TcpServer.GetLastMessage().Trim()=="fw"){
                     LogSys.SuccesLog("GO GO");
                     EngineDrivers.Engine_FORWARD();
                 }
-                else if(TcpServer.GetLastMessage()=="bw"){
+                else if(TcpServer.GetLastMessage().Trim()=="bw"){
+                     LogSys.SuccesLog("BACK BACK");
                     EngineDrivers.Engine_BACKWARD();
                 }
-                else if(TcpServer.GetLastMessage()=="stop"){
+                else if(TcpServer.GetLastMessage().Trim()=="stop"){
+                     LogSys.SuccesLog("STOP");
                     EngineDrivers.Engine_RESET();
                 }
                 Thread.Sleep(150);

@@ -68,10 +68,7 @@ public class TcpServer
                 // Gelen veriyi ekrana yazdır
                 string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
                 LogSys.InfoLog($"CLIENT: {message}");
-                if(message.Trim()=="fw"){
-                    LogSys.WarnLog("tetiklendi");
-                    EngineDrivers.Engine_FORWARD();
-            }
+                
         }
     }
         client.Close();
