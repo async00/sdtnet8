@@ -23,15 +23,20 @@ namespace SanayideDijitalTeknolijiler_net8._0
             LogSys.GrayLog("-------------------color board-------------------");
 
             //MOTOR DENEME
-            GC.PreparePin(2,PinMode.Output);
-            GC.PreparePin(3,PinMode.Output);
-            GC.PreparePin(20,PinMode.Output);
-            GC.PreparePin(21,PinMode.Output);
-            GC.Write(2,PinValue.High);
-            GC.Write(3,PinValue.Low);
-            GC.Write(20,PinValue.High);
-            GC.Write(21,PinValue.Low);
-            LogSys.InfoLog("motorlar calısıy");
+            EngineDrivers.Preapare_Engine_Pins();
+            
+            while("muhammed"=="muhammed"){
+                if(TcpServer.GetLastMessage()=="fw"){
+                    EngineDrivers.Engine_FORWARD();
+                }
+                else if(TcpServer.GetLastMessage()=="bw"){
+                    EngineDrivers.Engine_BACKWARD();
+                }
+                else if(TcpServer.GetLastMessage()=="stop"){
+                    EngineDrivers.Engine_RESET();
+                }
+                Thread.Sleep(150);
+            }
 
         }
     }

@@ -49,6 +49,7 @@ public static class GC
             return -1;
         }
     }
+    //ÇIAKRKEN BÜTÜN PİNLERİ KAPAT 
     public static void ClosePin(int pinNumber)
     {
         if (_gpioController.IsPinOpen(pinNumber))
