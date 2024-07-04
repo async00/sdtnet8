@@ -1,0 +1,2 @@
+tcp tunneling(free)
+sudo ssh -p 443 -R0:0.0.0.0:2804  -o ServerAliveInterval=30 tcp@a.pinggy.io

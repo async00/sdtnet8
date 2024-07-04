@@ -29,7 +29,7 @@ public class TcpServer
 
         try
         {
-            IPAddress localAddr = IPAddress.Parse("127.0.0.1");//raspberry pide isen 0.0.0.0
+            IPAddress localAddr = IPAddress.Parse("0.0.0.0");//raspberry pide isen 0.0.0.0
             _server = new TcpListener(localAddr, _port);
             _server.Start();
             _isRunning = true;
