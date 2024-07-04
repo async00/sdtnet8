@@ -1,5 +1,4 @@
-﻿using GpioLedExample;
-using SanayideDijitalTeknolijiler_net8._0;
+﻿using SanayideDijitalTeknolijiler_net8._0;
 using System;
 using System.Net;
 using System.Net.Sockets;
