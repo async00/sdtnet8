@@ -68,10 +68,11 @@ public class TcpServer
                 // Gelen veriyi ekrana yazdır
                 string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
                 LogSys.InfoLog($"CLIENT: {message}");
-                lastrecmessage=message;
+                if(message=="fw"){
+                    EngineDrivers.Engine_FORWARD();
             }
         }
-
+    }
         client.Close();
     }
 
