@@ -25,7 +25,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
             //MOTOR DENEME
             EngineDrivers.Preapare_Engine_Pins();
             
-            while("muhammed"=="muhammed"){
+            while(true){
                 if(TcpServer.GetLastMessage()=="fw"){
                     EngineDrivers.Engine_FORWARD();
                 }
