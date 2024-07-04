@@ -16,7 +16,7 @@ public class TcpServer
 
     internal static string GetLastMessage()
     {
-
+       
         return lastrecmessage;//en son gelen text mesajını döndür
     }
     public static void Listen()

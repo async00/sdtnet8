@@ -24,10 +24,12 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
             //MOTOR DENEME
             EngineDrivers.Preapare_Engine_Pins();
-            
+            string oldmessage=string.Empty;
             while(true){
+                
                 string message =TcpServer.GetLastMessage();
-                if(message.Trim()=="fw"){
+                if(message!=oldmessage){
+                    if(message.Trim()=="fw"){
                     LogSys.SuccesLog("GO GO");
                     EngineDrivers.Engine_FORWARD();
                 }
@@ -40,6 +42,9 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     EngineDrivers.Engine_RESET();
                 }
                 Thread.Sleep(150);
+                oldmessage=message;
+                }
+               
             }
 
         }
