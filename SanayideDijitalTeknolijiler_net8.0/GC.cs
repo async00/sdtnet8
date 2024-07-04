@@ -49,6 +49,14 @@ public static class GC
             return -1;
         }
     }
+    public static void ClosePin(int pinNumber)
+    {
+        if (_gpioController.IsPinOpen(pinNumber))
+        {
+            Write(pinNumber,PinValue.Low);
+            _gpioController.ClosePin(pinNumber);
+        }
+    }
 
 }
 
