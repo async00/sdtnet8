@@ -27,7 +27,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
             
             while(true){
                 LogSys.ErrorLog(TcpServer.GetLastMessage());
-                if(TcpServer.GetLastMessage()=="fw"){
+                if("fw"==TcpServer.GetLastMessage()){
                     LogSys.ErrorLog("GO GO");
                     EngineDrivers.Engine_FORWARD();
                 }
