@@ -13,7 +13,7 @@ namespace GpioLedExample
             LogSys.InfoLog("LogSystem running");
             Thread listenerserver_thread = new Thread(TcpServer.Listen);
             listenerserver_thread.Start();//thread olarak tcp listener
-
+            
             //renk denemesi
             LogSys.GrayLog("-------------------color board-------------------");
             LogSys.SuccesLog("mutlu ferhat");
