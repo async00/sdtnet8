@@ -227,6 +227,22 @@
           "lib/netstandard1.3/System.Collections.Concurrent.dll": {}
         }
       },
+      "System.Device.Gpio/3.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/System.Device.Gpio.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.Device.Gpio.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net5.0/System.Device.Gpio.targets": {}
+        }
+      },
       "System.Diagnostics.Debug/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1511,6 +1527,27 @@
         "ref/xamarinwatchos10/_._",
         "system.collections.concurrent.4.3.0.nupkg.sha512",
         "system.collections.concurrent.nuspec"
+      ]
+    },
+    "System.Device.Gpio/3.2.0": {
+      "sha512": "jaL93IC1S2wZfCSLWt8/1lQCp/pDAzDNE5dfLq+pubEhCp0BjDZze6rJMu2KdOuCOeRxHmBuhtWrIRlrTKFsTg==",
+      "type": "package",
+      "path": "system.device.gpio/3.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "README.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net5.0/System.Device.Gpio.targets",
+        "lib/net6.0-windows10.0.17763/System.Device.Gpio.dll",
+        "lib/net6.0-windows10.0.17763/System.Device.Gpio.xml",
+        "lib/net6.0/System.Device.Gpio.dll",
+        "lib/net6.0/System.Device.Gpio.xml",
+        "lib/netstandard2.0/System.Device.Gpio.dll",
+        "lib/netstandard2.0/System.Device.Gpio.xml",
+        "system.device.gpio.3.2.0.nupkg.sha512",
+        "system.device.gpio.nuspec"
       ]
     },
     "System.Diagnostics.Debug/4.3.0": {
@@ -3664,37 +3701,31 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "System.Device.Gpio >= 3.2.0",
       "Unosquare.Raspberry.Abstractions >= 0.4.1",
       "Unosquare.Raspberry.IO >= 0.27.1",
       "Unosquare.RaspberryIO.Peripherals >= 0.5.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\stati\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/home/async/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\stati\\source\\repos\\SanayideDijitalTeknolijiler_net8.0\\SanayideDijitalTeknolijiler_net8.0\\SanayideDijitalTeknolijiler_net8.0.csproj",
+      "projectUniqueName": "/home/async/Masaüstü/sdtnet8/SanayideDijitalTeknolijiler_net8.0/SanayideDijitalTeknolijiler_net8.0.csproj",
       "projectName": "SanayideDijitalTeknolijiler_net8.0",
-      "projectPath": "C:\\Users\\stati\\source\\repos\\SanayideDijitalTeknolijiler_net8.0\\SanayideDijitalTeknolijiler_net8.0\\SanayideDijitalTeknolijiler_net8.0.csproj",
-      "packagesPath": "C:\\Users\\stati\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\stati\\source\\repos\\SanayideDijitalTeknolijiler_net8.0\\SanayideDijitalTeknolijiler_net8.0\\obj\\",
+      "projectPath": "/home/async/Masaüstü/sdtnet8/SanayideDijitalTeknolijiler_net8.0/SanayideDijitalTeknolijiler_net8.0.csproj",
+      "packagesPath": "/home/async/.nuget/packages/",
+      "outputPath": "/home/async/Masaüstü/sdtnet8/SanayideDijitalTeknolijiler_net8.0/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\stati\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/async/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3707,17 +3738,16 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "System.Device.Gpio": {
+            "target": "Package",
+            "version": "[3.2.0, )"
+          },
           "Unosquare.Raspberry.Abstractions": {
             "target": "Package",
             "version": "[0.4.1, )"
@@ -3742,12 +3772,18 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.6, 8.0.6]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.106/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
