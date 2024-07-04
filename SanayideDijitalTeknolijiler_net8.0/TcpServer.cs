@@ -68,7 +68,7 @@ public class TcpServer
                 // Gelen veriyi ekrana yazdır
                 string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
                 LogSys.InfoLog($"CLIENT: {message}");
-                
+                lastrecmessage=message;
         }
     }
         client.Close();
