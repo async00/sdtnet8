@@ -16,9 +16,8 @@ public class TcpServer
 
     internal static string GetLastMessage()
     {
-        string temp=lastrecmessage;
-        lastrecmessage=string.Empty;
-        return temp;//en son gelen text mesajını döndür
+
+        return lastrecmessage;//en son gelen text mesajını döndür
     }
     public static void Listen()
     {
