@@ -25,27 +25,10 @@ namespace SanayideDijitalTeknolijiler_net8._0
             //MOTOR DENEME
             EngineDrivers.Preapare_Engine_Pins();
             string oldmessage=string.Empty;
-            while(true){
-                
-                string message =TcpServer.GetLastMessage();
-                if(message!=oldmessage){
-                    if(message.Trim()=="fw"){
-                    LogSys.SuccesLog("GO GO");
-                    EngineDrivers.Engine_FORWARD();
-                }
-                else if(message.Trim()=="bw"){
-                     LogSys.SuccesLog("BACK BACK");
-                    EngineDrivers.Engine_BACKWARD();
-                }
-                else if(message.Trim()=="stop"){
-                    LogSys.SuccesLog("STOP");
-                    EngineDrivers.Engine_RESET();
-                }
-                Thread.Sleep(150);
-                oldmessage=message;
-                }
-               
-            }
+            Thread tcpcmdexecutor_t=new Thread(TcpCmd.Executor);
+            tcpcmdexecutor_t.Start();
+            LogSys.SuccesLog("Tcp Cli Activated....");
+            LogSys.WarnLog("");
 
         }
     }

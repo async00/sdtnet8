@@ -3713,11 +3713,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/async/Masaüstü/sdtnet8/SanayideDijitalTeknolijiler_net8.0/SanayideDijitalTeknolijiler_net8.0.csproj",
+      "projectUniqueName": "/home/async/Masaüstü/all2/sdtnet8/SanayideDijitalTeknolijiler_net8.0/SanayideDijitalTeknolijiler_net8.0.csproj",
       "projectName": "SanayideDijitalTeknolijiler_net8.0",
-      "projectPath": "/home/async/Masaüstü/sdtnet8/SanayideDijitalTeknolijiler_net8.0/SanayideDijitalTeknolijiler_net8.0.csproj",
+      "projectPath": "/home/async/Masaüstü/all2/sdtnet8/SanayideDijitalTeknolijiler_net8.0/SanayideDijitalTeknolijiler_net8.0.csproj",
       "packagesPath": "/home/async/.nuget/packages/",
-      "outputPath": "/home/async/Masaüstü/sdtnet8/SanayideDijitalTeknolijiler_net8.0/obj/",
+      "outputPath": "/home/async/Masaüstü/all2/sdtnet8/SanayideDijitalTeknolijiler_net8.0/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/async/.nuget/NuGet/NuGet.Config"
