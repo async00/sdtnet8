@@ -7,9 +7,11 @@ namespace SanayideDijitalTeknolijiler_net8._0
 {
     class Program
     {
+        //çizgi sensör pin değişkenleri
+        internal static int lrpin1,lrpin2,lrpin3,lrpin4,lrpin5;
         static void Main(string[] args)
-        {
-
+        {   
+            //sistemi başlat ve tcpden gelen verileri dinle
             LogSys.InfoLog("LogSystem running");
             Thread listenerserver_thread = new Thread(TcpServer.Listen);
             listenerserver_thread.Start();//thread olarak tcp listener
@@ -22,15 +24,23 @@ namespace SanayideDijitalTeknolijiler_net8._0
             LogSys.ErrorLog("kızgın ferhat");
             LogSys.GrayLog("-------------------color board-------------------");
 
-            //MOTOR DENEME
+            //MOTOR PİNLERİ HAZIRLA
             EngineDrivers.Preapare_Engine_Pins();
-            string oldmessage=string.Empty;
+            LogSys.InfoLog("Motor pinleri hazırlandı");
+
+            //TCPDEN GELEN KODLARI EXECUTE ET
             Thread tcpcmdexecutor_t=new Thread(TcpCmd.Executor);
             tcpcmdexecutor_t.Start();
             LogSys.SuccesLog("Tcp Cli Activated....");
-            LogSys.WarnLog("Debug mode starting ");
-            LogSys.WarnLog("TCRT5000 READ !");
-            TCRT5000.WriteAllPin();
+            LogSys.WarnLog("Mode=debug");
+
+            //çizgi sensöründen gelen verileri işle ve  lrpin1...'lere eşitle
+            TCRT5000.SpesificLineRead(1);
+            Thread tcrt5_t=new Thread(TCRT5000.ListenPins);
+            tcrt5_t.Start();
+            LogSys.SuccesLog("Çizgi sensörü dinleniyor");
+            
+
         }
     }
 }

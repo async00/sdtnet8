@@ -22,6 +22,7 @@ public static class GC
         }
     }
 
+
     // pini high ve ya low yap
     public static void Write(int pinNumber, PinValue value)
     {
@@ -60,5 +61,4 @@ public static class GC
     }
 
 }
-
 }

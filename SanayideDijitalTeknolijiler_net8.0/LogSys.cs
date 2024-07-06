@@ -18,6 +18,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
         internal static void SuccesLog(string message)
         {
+            
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("[SCS]" + message);
             Console.ResetColor();

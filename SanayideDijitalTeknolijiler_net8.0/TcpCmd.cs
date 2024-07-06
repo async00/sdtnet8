@@ -6,6 +6,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
     public static class TcpCmd
     {
         internal static void Executor(){
+            LogSys.InfoLog("Executor started");
             string oldmessage=string.Empty;
             while(true){
                 string message =TcpServer.GetLastMessage();
