@@ -12,22 +12,25 @@ namespace SanayideDijitalTeknolijiler_net8._0
             GC.PreparePin(4,PinMode.Input);
             GC.PreparePin(14,PinMode.Input);
             GC.PreparePin(15,PinMode.Input);
+            int[] pins = { 2,3,4,14,15 };
 
-            while("muhammed".Trim()=="muhammed".Trim()){
-                Console.WriteLine("--------------------------");
-                Console.WriteLine($"2.PİN ||{GC.ReadPin(2)}\n");
-                Console.WriteLine($"3.PİN ||{GC.ReadPin(3)}\n");
-                Console.WriteLine($"4.PİN ||{GC.ReadPin(4)}\n");
-                Console.WriteLine($"14.PİN ||{GC.ReadPin(14)}\n");
-                Console.WriteLine($"15.PİN ||{GC.ReadPin(15)}\n");
-                Console.WriteLine("--------------------------");
-                Thread.Sleep(500);
+        while (true)
+        {
+            Console.Clear();
+            Console.WriteLine("TCRT5000 Sensör Okumaları:");
+            Console.WriteLine("--------------------------");
+            Console.WriteLine("| Pin | Durum           |");
+            Console.WriteLine("--------------------------");
+
+            foreach (var pin in pins)
+            {
+                var value = GC.ReadPin(pin);
+                Console.WriteLine($"| {pin,3} | {(value == 1 ? "Cizgi Yok" : "Cizgi Var"),-15} |");
             }
 
-
-
-
-            return "essek zaten write yazıyom ";
+            Console.WriteLine("--------------------------");
+            Thread.Sleep(1000); // 1 saniye bekle
         }
+    }
     }
 }
