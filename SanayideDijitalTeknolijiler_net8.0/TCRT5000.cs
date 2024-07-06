@@ -6,20 +6,20 @@ namespace SanayideDijitalTeknolijiler_net8._0
     public static class TCRT5000
     {
         internal static string ReadAllPin(){
-            //preapare pins 3  5  7  8 10
+            //preapare pins 2  3  4  14 15
+            GC.PreparePin(2,PinMode.Input);
             GC.PreparePin(3,PinMode.Input);
-            GC.PreparePin(5,PinMode.Input);
-            GC.PreparePin(7,PinMode.Input);
-            GC.PreparePin(8,PinMode.Input);
-            GC.PreparePin(10,PinMode.Input);
+            GC.PreparePin(4,PinMode.Input);
+            GC.PreparePin(14,PinMode.Input);
+            GC.PreparePin(15,PinMode.Input);
 
             while("muhammed".Trim()=="muhammed".Trim()){
                 Console.WriteLine("--------------------------");
-                //Console.WriteLine($"3.PİN ||{GC.ReadPin(3)}\n");
-                Console.WriteLine($"5.PİN ||{GC.ReadPin(5)}\n");
-               // Console.WriteLine($"7.PİN ||{GC.ReadPin(7)}\n");
-                //Console.WriteLine($"8.PİN ||{GC.ReadPin(8)}\n");
-                //Console.WriteLine($"10.PİN ||{GC.ReadPin(10)}\n");
+                Console.WriteLine($"2.PİN ||{GC.ReadPin(2)}\n");
+                Console.WriteLine($"3.PİN ||{GC.ReadPin(3)}\n");
+                Console.WriteLine($"4.PİN ||{GC.ReadPin(4)}\n");
+                Console.WriteLine($"14.PİN ||{GC.ReadPin(14)}\n");
+                Console.WriteLine($"15.PİN ||{GC.ReadPin(15)}\n");
                 Console.WriteLine("--------------------------");
                 Thread.Sleep(500);
             }
