@@ -21,6 +21,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 Console.WriteLine($"8.PİN ||{GC.ReadPin(8)}\n");
                 Console.WriteLine($"10.PİN ||{GC.ReadPin(10)}\n");
                 Console.WriteLine("--------------------------");
+                Thread.Sleep(500);
             }
 
 
