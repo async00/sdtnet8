@@ -28,8 +28,9 @@ namespace SanayideDijitalTeknolijiler_net8._0
             Thread tcpcmdexecutor_t=new Thread(TcpCmd.Executor);
             tcpcmdexecutor_t.Start();
             LogSys.SuccesLog("Tcp Cli Activated....");
-            LogSys.WarnLog("");
-
+            LogSys.WarnLog("Debug mode starting ");
+            LogSys.WarnLog("TCRT5000 READ !");
+            TCRT5000.ReadAllPin();
         }
     }
 }
