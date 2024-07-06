@@ -15,11 +15,11 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
             while("muhammed".Trim()=="muhammed".Trim()){
                 Console.WriteLine("--------------------------");
-                Console.WriteLine($"3.PİN ||{GC.ReadPin(3)}\n");
+                //Console.WriteLine($"3.PİN ||{GC.ReadPin(3)}\n");
                 Console.WriteLine($"5.PİN ||{GC.ReadPin(5)}\n");
-                Console.WriteLine($"7.PİN ||{GC.ReadPin(7)}\n");
-                Console.WriteLine($"8.PİN ||{GC.ReadPin(8)}\n");
-                Console.WriteLine($"10.PİN ||{GC.ReadPin(10)}\n");
+               // Console.WriteLine($"7.PİN ||{GC.ReadPin(7)}\n");
+                //Console.WriteLine($"8.PİN ||{GC.ReadPin(8)}\n");
+                //Console.WriteLine($"10.PİN ||{GC.ReadPin(10)}\n");
                 Console.WriteLine("--------------------------");
                 Thread.Sleep(500);
             }
