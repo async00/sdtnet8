@@ -30,7 +30,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
             LogSys.SuccesLog("Tcp Cli Activated....");
             LogSys.WarnLog("Debug mode starting ");
             LogSys.WarnLog("TCRT5000 READ !");
-            TCRT5000.ReadAllPin();
+            TCRT5000.WriteAllPin();
         }
     }
 }

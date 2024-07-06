@@ -5,7 +5,39 @@ namespace SanayideDijitalTeknolijiler_net8._0
 {
     public static class TCRT5000
     {
-        internal static string ReadAllPin(){
+        internal static int SpesificLineRead(int pin){
+            GC.PreparePin(2,PinMode.Input);
+            GC.PreparePin(3,PinMode.Input);
+            GC.PreparePin(4,PinMode.Input);
+            GC.PreparePin(14,PinMode.Input);
+            GC.PreparePin(15,PinMode.Input);
+            if(pin==1){
+                return GC.ReadPin(2);
+            }
+            if(pin==2){
+                return GC.ReadPin(3);
+            }
+            if(pin==3){
+                return GC.ReadPin(4);
+            }
+            if(pin==4){
+                return GC.ReadPin(14);
+            }
+            if(pin==5){
+                return GC.ReadPin(15);
+            }
+            LogSys.ErrorLog("Spesifc pin sadece 12345 değer alır adam gibi birşey yaz moruk");
+            return -1;
+
+
+
+
+
+        }
+
+
+
+        internal static string WriteAllPin(){
             //preapare pins 2  3  4  14 15
             GC.PreparePin(2,PinMode.Input);
             GC.PreparePin(3,PinMode.Input);
