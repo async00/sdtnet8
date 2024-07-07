@@ -33,9 +33,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
         internal static void LR_ATTACH(){
             if(Program.tcrt5_t.IsAlive){
                 LogSys.InfoLog("Thread is running.Lrpins attached to engine");
-                while(1==1){
-                    
-                }
+             
             }
             else{
                 LogSys.ErrorLog("Tcrt5_t thread not working");
@@ -81,8 +79,10 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
 
         //herhangibi bir döngü yok sadece ekrana yazdır 
-        internal static void WriteAllPins(){
+        internal static string WriteAllPins(){
             //preapare pins 2  3  4  14 15
+            //debug için string döndür 
+            string wreturn=string.Empty;
             GC.PreparePin(2,PinMode.Input);
             GC.PreparePin(3,PinMode.Input);
             GC.PreparePin(4,PinMode.Input);
@@ -90,19 +90,25 @@ namespace SanayideDijitalTeknolijiler_net8._0
             GC.PreparePin(15,PinMode.Input);
             int[] pins = { 2,3,4,14,15 };
             Console.Clear();
+            wreturn+="TCRT5000 Sensör Okumaları:";
+            wreturn+="--------------------------";      
+            wreturn+="| Pin | Durum           |";  
+            wreturn+="--------------------------";
+
             Console.WriteLine("TCRT5000 Sensör Okumaları:");
             Console.WriteLine("--------------------------");
             Console.WriteLine("| Pin | Durum           |");
             Console.WriteLine("--------------------------");
-        
+
             foreach (var pin in pins)
             {
                 var value = GC.ReadPin(pin);
                 Console.WriteLine($"| {pin,3} | {(value == 1 ? "Cizgi Yok" : "Cizgi Var"),-15} |");
+                wreturn+=$"| {pin,3} | {(value == 1 ? "Cizgi Yok" : "Cizgi Var"),-15} |";
             }
-
+            wreturn+="--------------------------";
             Console.WriteLine("--------------------------");
-
+            return wreturn;
         
     }
     }

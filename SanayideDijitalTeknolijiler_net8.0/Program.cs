@@ -41,12 +41,13 @@ namespace SanayideDijitalTeknolijiler_net8._0
             //tcrt5_t.Start();
             
             //LogSys.SuccesLog("Çizgi sensörü dinleniyor");
+            TerminalLogger terminaltcrtlogger=TerminalLogger.BeginTerminal();
             while(true){
-                TCRT5000.WriteAllPins();
+                terminaltcrtlogger.WriteToTerminal(TCRT5000.WriteAllPins());
                 Thread.Sleep(100);
+                terminaltcrtlogger.ClearTerminal();
             }
-         
-            //
+
             
 
         }
