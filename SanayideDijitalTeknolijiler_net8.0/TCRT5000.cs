@@ -9,8 +9,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
             GC.PreparePin(2,PinMode.Input);
             GC.PreparePin(3,PinMode.Input);
             GC.PreparePin(4,PinMode.Input);
-            GC.PreparePin(14,PinMode.Input);
-            GC.PreparePin(15,PinMode.Input);
+            GC.PreparePin(23,PinMode.Input);
+            GC.PreparePin(24,PinMode.Input);
             if(pin==1){
                 return GC.ReadPin(2);
             }
@@ -21,10 +21,10 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 return GC.ReadPin(4);
             }
             if(pin==4){
-                return GC.ReadPin(14);
+                return GC.ReadPin(23);
             }
             if(pin==5){
-                return GC.ReadPin(15);
+                return GC.ReadPin(24);
             }
             LogSys.ErrorLog("Spesifc pin sadece 12345 değer alır adam gibi birşey yaz moruk");
             return -1;
@@ -46,11 +46,9 @@ namespace SanayideDijitalTeknolijiler_net8._0
             GC.PreparePin(2,PinMode.Input);
             GC.PreparePin(3,PinMode.Input);
             GC.PreparePin(4,PinMode.Input);
-            GC.PreparePin(14,PinMode.Input);
-            GC.PreparePin(15,PinMode.Input);
+            GC.PreparePin(23,PinMode.Input);
+            GC.PreparePin(24,PinMode.Input);
 
-
-            int[] pins=[2,3,4,14,15];
 
 
             while(1==1){
@@ -59,8 +57,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 Program.lrpin1=GC.ReadPin(2);
                 Program.lrpin2=GC.ReadPin(3);
                 Program.lrpin3=GC.ReadPin(4);
-                Program.lrpin4=GC.ReadPin(14);
-                Program.lrpin5=GC.ReadPin(15);
+                Program.lrpin4=GC.ReadPin(23);
+                Program.lrpin5=GC.ReadPin(24);
          
 
 
@@ -79,9 +77,9 @@ namespace SanayideDijitalTeknolijiler_net8._0
             GC.PreparePin(2,PinMode.Input);
             GC.PreparePin(3,PinMode.Input);
             GC.PreparePin(4,PinMode.Input);
-            GC.PreparePin(14,PinMode.Input);
-            GC.PreparePin(15,PinMode.Input);
-            int[] pins = { 2,3,4,14,15 };
+            GC.PreparePin(23,PinMode.Input);
+            GC.PreparePin(24,PinMode.Input);
+            int[] pins = { 2,3,4,23,24 };
             Console.Clear();
             wreturn+="TCRT5000 Sensör Okumaları:";
             wreturn+="--------------------------";      
