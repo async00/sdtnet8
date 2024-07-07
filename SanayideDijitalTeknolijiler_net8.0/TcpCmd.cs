@@ -36,5 +36,31 @@ namespace SanayideDijitalTeknolijiler_net8._0
                
             }
         }
+        internal static void ManuelExecution(string message){
+           
+                
+                if(message=="fw"){
+                    LogSys.SuccesLog("GO GO");
+                    EngineDrivers.Engine_FORWARD();
+                }
+                else if(message=="bw"){
+                    LogSys.SuccesLog("BACKWARD");
+                    EngineDrivers.Engine_BACKWARD();
+                }
+                else if(message=="lf"){
+                    LogSys.SuccesLog("LEFT");
+                }
+                else if(message=="rg"){
+                    LogSys.SuccesLog("RIGHT");
+                    EngineDrivers.Engine_RIGHT();
+                }
+                else if(message=="stop"){
+                    LogSys.SuccesLog("STOP");
+                    EngineDrivers.Engine_STOP();
+                }
+                Thread.Sleep(150);
+               
+                
+        }
     }
 }

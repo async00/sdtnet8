@@ -39,7 +39,23 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 LogSys.ErrorLog("Tcrt5_t thread not working");
             }
         }
-
+        internal static void döndü_hanım(){
+            while(true){
+               
+               Console.WriteLine("Distance : "+DistanceSens.GetDistance());
+                if(Program.lrpin1==1 && Program.lrpin2==1){
+                    Console.WriteLine("solcu ferhat");
+                }
+                if(Program.lrpin4==1 && Program.lrpin5==1){
+                    Console.WriteLine("sağcı ferhat");
+                }
+                if(Program.lrpin3==1){
+                    Console.WriteLine("merkeziyetçi ferhat");
+                }
+                Thread.Sleep(150);
+                TCRT5000.WriteAllPins();
+            }
+        }
         internal static void ListenPins(){  
             GC.PreparePin(2,PinMode.Input);
             GC.PreparePin(3,PinMode.Input);

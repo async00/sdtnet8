@@ -40,21 +40,20 @@ namespace SanayideDijitalTeknolijiler_net8._0
             tcrt5_t=new Thread(TCRT5000.ListenPins);
             tcrt5_t.Start();
             
-            //LogSys.SuccesLog("Çizgi sensörü dinleniyor");
-            while(true){
+            LogSys.SuccesLog("Çizgi sensörü dinleniyor");
+
+            LogSys.InfoLog("Manuel exec :  \n ");
+            while("muhammed"=="muhammed"){
+                Console.Write("m_exec : ");
+                string temp = Console.ReadLine();
+                if(string.IsNullOrEmpty(temp)){
+                    TcpCmd.ManuelExecution(temp);
+                    temp=string.Empty;
+                }else{
+                    LogSys.ErrorLog("null or empty on manuel exec");
+                }
+
                
-               Console.WriteLine(DistanceSens.GetDistance());
-                if(lrpin1==1 && lrpin2==1){
-                    Console.WriteLine("SOLA DÖN");
-                }
-                if(lrpin4==1 && lrpin5==1){
-                    Console.WriteLine("SAĞA DÖN");
-                }
-                if(lrpin3==1){
-                    Console.WriteLine("ORTAYI İZLE");
-                }
-                Thread.Sleep(150);
-                TCRT5000.WriteAllPins();
             }
 
             
