@@ -46,7 +46,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
             while("muhammed"=="muhammed"){
                 Console.Write("m_exec : ");
                 string temp = Console.ReadLine();
-                if(string.IsNullOrEmpty(temp)){
+                if(!string.IsNullOrEmpty(temp)){
                     TcpCmd.ManuelExecution(temp);
                     temp=string.Empty;
                 }else{
