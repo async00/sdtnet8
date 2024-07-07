@@ -54,21 +54,14 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
 
             while(1==1){
-            TEMP1=GC.ReadPin(2);
-            TEMP2=GC.ReadPin(3);
-            TEMP3=GC.ReadPin(4);
-            TEMP4=GC.ReadPin(14);
-            TEMP5=GC.ReadPin(15);
             Thread.Sleep(30);
-            if(TEMP1==GC.ReadPin(2)&&TEMP2==GC.ReadPin(3)&&TEMP3==GC.ReadPin(4)&&TEMP4==GC.ReadPin(14)&&TEMP5==GC.ReadPin(15))
-            {
+            
                 Program.lrpin1=GC.ReadPin(2);
                 Program.lrpin2=GC.ReadPin(3);
                 Program.lrpin3=GC.ReadPin(4);
                 Program.lrpin4=GC.ReadPin(14);
                 Program.lrpin5=GC.ReadPin(15);
-            }
-            Thread.Sleep(30);
+         
 
 
          
