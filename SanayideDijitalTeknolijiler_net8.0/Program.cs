@@ -44,13 +44,13 @@ namespace SanayideDijitalTeknolijiler_net8._0
             while(true){
                
                
-                if(lrpin1==0 && lrpin2==0){
+                if(lrpin1==1 && lrpin2==1){
                     Console.WriteLine("SOLA DÖN");
                 }
-                if(lrpin4==0 && lrpin5==0){
+                if(lrpin4==1 && lrpin5==1){
                     Console.WriteLine("SAĞA DÖN");
                 }
-                if(lrpin3==0){
+                if(lrpin3==1){
                     Console.WriteLine("ORTAYI İZLE");
                 }
                 Thread.Sleep(100);
