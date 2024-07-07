@@ -52,7 +52,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
             GC.Write(20,PinValue.Low);
             GC.Write(21,PinValue.High);
         }
-        public static void Engine_STOP()
+        public static void Engine_RESET()
         {
             GC.Write(2,PinValue.Low);
             GC.Write(3,PinValue.Low);

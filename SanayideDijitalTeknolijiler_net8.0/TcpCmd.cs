@@ -1,5 +1,6 @@
 using SanayideDijitalTeknolijiler_net8._0;
 using Swan.Logging;
+using Unosquare.RaspberryIO.Abstractions;
 
 namespace SanayideDijitalTeknolijiler_net8._0
 {
@@ -28,7 +29,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 }
                 else if(message=="stop"){
                     LogSys.SuccesLog("STOP");
-                    EngineDrivers.Engine_STOP();
+                    EngineDrivers.Engine_RESET();
                 }
                 Thread.Sleep(150);
                 oldmessage=message;
@@ -56,8 +57,16 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 }
                 else if(message=="stop"){
                     LogSys.SuccesLog("STOP");
-                    EngineDrivers.Engine_STOP();
+                    EngineDrivers.Engine_RESET();
                 }
+                else if(message=="distance"){
+                    LogSys.SuccesLog(DistanceSens.GetDistance().ToString());
+                }
+                else if(message.Contains("spc")){
+                    string local =message.Replace("spc","").Trim();
+                    LogSys.SuccesLog($"Line {local} is "+TCRT5000.SpesificLineRead(Convert.ToInt32(local)).ToString());
+                }
+                
                 Thread.Sleep(150);
                
                 

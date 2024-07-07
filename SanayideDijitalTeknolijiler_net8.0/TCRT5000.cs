@@ -43,6 +43,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
             while(true){
                
                Console.WriteLine("Distance : "+DistanceSens.GetDistance());
+                //siyasi ağaç ferhat
                 if(Program.lrpin1==1 && Program.lrpin2==1){
                     Console.WriteLine("solcu ferhat");
                 }
