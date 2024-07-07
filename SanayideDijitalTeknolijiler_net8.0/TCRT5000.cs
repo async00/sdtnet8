@@ -30,6 +30,18 @@ namespace SanayideDijitalTeknolijiler_net8._0
             return -1;
         }
 
+        internal static void LR_ATTACH(){
+            if(Program.tcrt5_t.IsAlive){
+                LogSys.InfoLog("Thread is running.Lrpins attached to engine");
+                while(1==1){
+                    
+                }
+            }
+            else{
+                LogSys.ErrorLog("Tcrt5_t thread not working");
+            }
+        }
+
         internal static void ListenPins(){
             //pinleri dinle ve eşitle
             int TEMP1,TEMP2,TEMP3,TEMP4,TEMP5;      
@@ -69,7 +81,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
 
         //herhangibi bir döngü yok sadece ekrana yazdır 
-        internal static void WriteAllPin(){
+        internal static void WriteAllPins(){
             //preapare pins 2  3  4  14 15
             GC.PreparePin(2,PinMode.Input);
             GC.PreparePin(3,PinMode.Input);
@@ -82,7 +94,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
             Console.WriteLine("--------------------------");
             Console.WriteLine("| Pin | Durum           |");
             Console.WriteLine("--------------------------");
-
+        
             foreach (var pin in pins)
             {
                 var value = GC.ReadPin(pin);

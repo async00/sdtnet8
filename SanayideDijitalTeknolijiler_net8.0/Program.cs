@@ -9,6 +9,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
     {
         //çizgi sensör pin değişkenleri
         internal static int lrpin1,lrpin2,lrpin3,lrpin4,lrpin5;
+        internal static Thread tcrt5_t;
         static void Main(string[] args)
         {   
             //sistemi başlat ve tcpden gelen verileri dinle
@@ -36,9 +37,16 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
             //çizgi sensöründen gelen verileri işle ve  lrpin1...'lere eşitle
             TCRT5000.SpesificLineRead(1);
-            Thread tcrt5_t=new Thread(TCRT5000.ListenPins);
-            tcrt5_t.Start();
-            LogSys.SuccesLog("Çizgi sensörü dinleniyor");
+         //   tcrt5_t=new Thread(TCRT5000.ListenPins);
+            //tcrt5_t.Start();
+            
+            //LogSys.SuccesLog("Çizgi sensörü dinleniyor");
+            while(true){
+                TCRT5000.WriteAllPins();
+                Thread.Sleep(100);
+            }
+         
+            //
             
 
         }
