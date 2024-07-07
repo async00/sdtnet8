@@ -40,9 +40,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
             }
         }
 
-        internal static void ListenPins(){
-            //pinleri dinle ve eşitle
-            int TEMP1,TEMP2,TEMP3,TEMP4,TEMP5;      
+        internal static void ListenPins(){  
             GC.PreparePin(2,PinMode.Input);
             GC.PreparePin(3,PinMode.Input);
             GC.PreparePin(4,PinMode.Input);
