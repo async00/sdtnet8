@@ -42,8 +42,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
             
             //LogSys.SuccesLog("Çizgi sensörü dinleniyor");
             while(true){
-                TCRT5000.WriteAllPins();
-                Thread.Sleep(100);
+               
+               
                 if(lrpin1==0 && lrpin2==0){
                     Console.WriteLine("SOLA DÖN");
                 }
@@ -53,7 +53,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 if(lrpin3==0){
                     Console.WriteLine("ORTAYI İZLE");
                 }
-               
+                Thread.Sleep(100);
+                TCRT5000.WriteAllPins();
             }
 
             
