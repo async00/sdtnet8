@@ -37,13 +37,22 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
             //çizgi sensöründen gelen verileri işle ve  lrpin1...'lere eşitle
             TCRT5000.SpesificLineRead(1);
-         //   tcrt5_t=new Thread(TCRT5000.ListenPins);
-            //tcrt5_t.Start();
+            tcrt5_t=new Thread(TCRT5000.ListenPins);
+            tcrt5_t.Start();
             
             //LogSys.SuccesLog("Çizgi sensörü dinleniyor");
             while(true){
                 TCRT5000.WriteAllPins();
                 Thread.Sleep(100);
+                if(lrpin1==0 && lrpin2==0){
+                    Console.WriteLine("SOLA DÖN");
+                }
+                if(lrpin4==0 && lrpin5==0){
+                    Console.WriteLine("SAĞA DÖN");
+                }
+                if(lrpin3==0){
+                    Console.WriteLine("ORTAYI İZLE");
+                }
                 Console.Clear();
             }
 
