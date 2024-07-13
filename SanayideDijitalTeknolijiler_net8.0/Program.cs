@@ -59,7 +59,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
             EngineDrivers.SetMotorSpeed(4,1);
             EngineDrivers.SetMotorSpeed(23,1);
             EngineDrivers.Engine_FORWARD();
-
+            Thread.Sleep(10000);
+            EngineDrivers.Engine_RESET();
 
 
         }
