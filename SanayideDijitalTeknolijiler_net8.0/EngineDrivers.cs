@@ -9,12 +9,13 @@ namespace SanayideDijitalTeknolijiler_net8._0
 {
     internal class EngineDrivers
     {
-        //tcpden gelen değere göre veri girme
-        //6 13 19 26
-        private static int pin1=6;
-        private static int pin2=13;
-        private static int pin3=19;
-        private static int pin4=26;
+        
+        private static int pin1=14;
+        private static int pin2=2;
+        private static int pin3=3;
+        private static int pin4=15;
+        private static int pwm1 = 4; 
+        private static int pwm2 = 23; 
         public static void Preapare_Engine_Pins(){
             //motor 1
             GC.PreparePin(pin1,PinMode.Output);
@@ -22,6 +23,22 @@ namespace SanayideDijitalTeknolijiler_net8._0
             //motor 2
             GC.PreparePin(pin3,PinMode.Output);
             GC.PreparePin(pin4,PinMode.Output);
+            //pwm
+            GC.PreparePin(pwm1, PinMode.Output);
+            GC.PreparePin(pwm2, PinMode.Output);
+        }
+        public static void SetMotorSpeed(int pin, double speed)
+        {
+            int onTime = (int)(speed * 1000); 
+            int offTime = 1000 - onTime;     
+
+            for (int i = 0; i < 100; i++)
+            {
+                GC.Write(pin, PinValue.High);
+                Thread.Sleep(onTime);
+                GC.Write(pin, PinValue.Low);
+                Thread.Sleep(offTime);
+            }
         }
         public static void Engine_FORWARD()
         {
