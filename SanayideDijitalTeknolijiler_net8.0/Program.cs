@@ -43,7 +43,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
             LogSys.SuccesLog("Çizgi sensörü dinleniyor");
 
             LogSys.InfoLog("Manuel exec :  \n ");
-            while("muhammed"=="muhammed"){
+            while("muhammet"=="muhammed"){
                 Console.Write("m_exec : ");
                 string temp = Console.ReadLine();
                 if(!string.IsNullOrEmpty(temp)){
@@ -56,7 +56,11 @@ namespace SanayideDijitalTeknolijiler_net8._0
                
             }
 
-            
+            GC.SetMotorSpeed(4,1);
+            GC.SetMotorSpeed(23,1);
+            GC.Engine_FORWARD();
+
+
 
         }
     }
