@@ -56,9 +56,9 @@ namespace SanayideDijitalTeknolijiler_net8._0
                
             }
 
-            GC.SetMotorSpeed(4,1);
-            GC.SetMotorSpeed(23,1);
-            GC.Engine_FORWARD();
+            EngineDrivers.SetMotorSpeed(4,1);
+            EngineDrivers.SetMotorSpeed(23,1);
+            EngineDrivers.Engine_FORWARD();
 
 
 
