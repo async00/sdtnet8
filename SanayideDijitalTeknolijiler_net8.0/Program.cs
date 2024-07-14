@@ -15,7 +15,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
             //sistemi başlat ve tcpden gelen verileri dinle
             LogSys.InfoLog("LogSystem running");
             Thread listenerserver_thread = new Thread(TcpServer.Listen);
-            listenerserver_thread.Start();//thread olarak tcp listener
+         //   listenerserver_thread.Start();//thread olarak tcp listener
 
             //renk denemesi
             LogSys.GrayLog("-------------------color board-------------------");
@@ -31,43 +31,29 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
             //TCPDEN GELEN KODLARI EXECUTE ET
             Thread tcpcmdexecutor_t=new Thread(TcpCmd.Executor);
-            tcpcmdexecutor_t.Start();
+        //    tcpcmdexecutor_t.Start();
             LogSys.SuccesLog("Tcp Cli Activated....");
             LogSys.WarnLog("Mode=debug");
 
             //çizgi sensöründen gelen verileri işle ve  lrpin1...'lere eşitle
             TCRT5000.SpesificLineRead(1);
             tcrt5_t=new Thread(TCRT5000.ListenPins);
-            tcrt5_t.Start();
+        //    tcrt5_t.Start();
             
             LogSys.SuccesLog("Çizgi sensörü dinleniyor");
 
-           LogSys.InfoLog("Manuel exec :  \n ");
-LogSys.InfoLog("set engine speed to 1");
-
-while (true)
-{
-    Console.Write("m_exec : ");
-    string temp = string.Empty;
-    ConsoleKeyInfo keyInfo;
-    while ((keyInfo = Console.ReadKey(true)).Key != ConsoleKey.Enter)
-    {
-        temp += keyInfo.KeyChar;
-        Console.Write(keyInfo.KeyChar);
-    }
-    Console.WriteLine(); // Enter'a bastığınızda yeni satıra geçer.
-
-    if (!string.IsNullOrEmpty(temp))
-    {
-        TcpCmd.ManuelExecution(temp);
-        temp = string.Empty;
-    }
-    else
-    {
-        LogSys.ErrorLog("wrong type");
-    }
-}
-
+            LogSys.InfoLog("Manuel exec :  \n ");
+            LogSys.InfoLog("set engine speed to 1");
+            while(true){
+                Console.Write("m_exec : ");
+                string temp = Console.ReadLine();
+                if(!string.IsNullOrEmpty(temp)){
+                    TcpCmd.ManuelExecution(temp);
+                    temp=string.Empty;
+                }else{
+                    LogSys.ErrorLog("wrong type");
+                }
+            }
         }
     }
 }
