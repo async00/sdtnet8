@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using SanayideDijitalTeknolijiler_net8._0;
 using Swan.Logging;
 using Unosquare.RaspberryIO.Abstractions;
@@ -61,12 +62,23 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 }
                 else if(message=="distance"){
                     LogSys.SuccesLog(DistanceSens.GetDistance().ToString());
-                }
+                }//MANUEL PIN CONTROL
                 else if(message.Contains("spc")){
                     string local =message.Replace("spc","").Trim();
                     LogSys.SuccesLog($"Line {local} is "+TCRT5000.SpesificLineRead(Convert.ToInt32(local)).ToString());
                 }
-                
+                else if(message.Contains("pin1")){
+                     EngineDrivers.pin1=Convert.ToInt32(message.Replace("pin1","").Trim());
+                }
+                else if(message.Contains("pin2")){
+                     EngineDrivers.pin2=Convert.ToInt32(message.Replace("pin2","").Trim());
+                }
+                else if(message.Contains("pin3")){
+                     EngineDrivers.pin3=Convert.ToInt32(message.Replace("pin3","").Trim());
+                }
+                else if(message.Contains("pin4")){
+                     EngineDrivers.pin4=Convert.ToInt32(message.Replace("pin4","").Trim());
+                }
                 Thread.Sleep(150);
                
                 

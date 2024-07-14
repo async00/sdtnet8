@@ -10,12 +10,12 @@ namespace SanayideDijitalTeknolijiler_net8._0
     internal class EngineDrivers
     {
         
-        private static int pin1=14;
-        private static int pin2=2;
-        private static int pin3=3;
-        private static int pin4=15;
-        private static int pwm1 = 4; 
-        private static int pwm2 = 23; 
+        internal static int pin1=14;
+        internal static int pin2=2;
+        internal static int pin3=3;
+        internal static int pin4=15;
+        internal static int pwm1 = 4; 
+        internal static int pwm2 = 23; 
         public static void Preapare_Engine_Pins(){
             //motor 1
             GC.PreparePin(pin1,PinMode.Output);
