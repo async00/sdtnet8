@@ -44,6 +44,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
             LogSys.InfoLog("Manuel exec :  \n ");
             LogSys.InfoLog("set engine speed to 1");
+            EngineDrivers.SetEngineSpeed(4,1);
+            EngineDrivers.SetEngineSpeed(23,1);
             while(true){
                 Console.Write("m_exec : ");
                 string temp = Console.ReadLine();
