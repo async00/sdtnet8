@@ -11,8 +11,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
     {
         
         internal static int pin1=14;
-        internal static int pin2=2;
-        internal static int pin3=3;
+        internal static int pin2=3;
+        internal static int pin3=2;
         internal static int pin4=15;
         private static int pwm1 = 4; 
         private static int pwm2 = 23; 
@@ -60,10 +60,14 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
         public static void Engine_FORWARD()
         {
-            GC.Write(pin1,PinValue.High);
-            GC.Write(pin2,PinValue.Low);
+            GC.Write(pin1,PinValue.Low);
+            GC.Write(pin2,PinValue.High);
+
+            //2.motor ileri
             GC.Write(pin3,PinValue.High);
             GC.Write(pin4,PinValue.Low);
+
+            
         }
         public static void Engine_LEFT()
         {
@@ -78,10 +82,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
         public static void Engine_RIGHT()
         {
         //1.motor geri
-            GC.Write(pin1,PinValue.Low);
-            GC.Write(pin2,PinValue.High);
-
-            //2.motor ileri
+            GC.Write(pin1,PinValue.High);
+            GC.Write(pin2,PinValue.Low);
             GC.Write(pin3,PinValue.High);
             GC.Write(pin4,PinValue.Low);
         }
