@@ -43,8 +43,6 @@ namespace SanayideDijitalTeknolijiler_net8._0
             LogSys.SuccesLog("Çizgi sensörü dinleniyor");
 
             LogSys.InfoLog("Manuel exec :  \n ");
-            EngineDrivers.SetEngineSpeed(4,1);
-            EngineDrivers.SetEngineSpeed(23,1);
             LogSys.InfoLog("set engine speed to 1");
             while(true){
                 Console.Write("m_exec : ");
