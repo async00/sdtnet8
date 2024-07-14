@@ -43,26 +43,19 @@ namespace SanayideDijitalTeknolijiler_net8._0
             LogSys.SuccesLog("Çizgi sensörü dinleniyor");
 
             LogSys.InfoLog("Manuel exec :  \n ");
-            while("muhammet"=="muhammed"){
+            EngineDrivers.SetEngineSpeed(4,1);
+            EngineDrivers.SetEngineSpeed(23,1);
+            LogSys.InfoLog("set engine speed to 1");
+            while(true){
                 Console.Write("m_exec : ");
                 string temp = Console.ReadLine();
                 if(!string.IsNullOrEmpty(temp)){
                     TcpCmd.ManuelExecution(temp);
                     temp=string.Empty;
                 }else{
-                    LogSys.ErrorLog("null or empty on manuel exec");
+                    LogSys.ErrorLog("wrong type");
                 }
-
-               
             }
-
-            EngineDrivers.SetMotorSpeed(4,1);
-            EngineDrivers.SetMotorSpeed(23,1);
-            EngineDrivers.Engine_FORWARD();
-            Thread.Sleep(10000);
-            EngineDrivers.Engine_RESET();
-
-
         }
     }
 }

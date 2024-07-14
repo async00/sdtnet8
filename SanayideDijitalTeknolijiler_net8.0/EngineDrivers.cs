@@ -27,7 +27,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
             GC.PreparePin(pwm1, PinMode.Output);
             GC.PreparePin(pwm2, PinMode.Output);
         }
-        public static void SetMotorSpeed(int pin, double speed)
+        public static void SetEngineSpeed(int pin, double speed)
         {
             int onTime = (int)(speed * 1000); 
             int offTime = 1000 - onTime;     
