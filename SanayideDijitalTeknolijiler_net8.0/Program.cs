@@ -42,18 +42,32 @@ namespace SanayideDijitalTeknolijiler_net8._0
             
             LogSys.SuccesLog("Çizgi sensörü dinleniyor");
 
-            LogSys.InfoLog("Manuel exec :  \n ");
-            LogSys.InfoLog("set engine speed to 1");
-            while(true){
-                Console.Write("m_exec : ");
-                string temp = Console.ReadLine();
-                if(!string.IsNullOrEmpty(temp)){
-                    TcpCmd.ManuelExecution(temp);
-                    temp=string.Empty;
-                }else{
-                    LogSys.ErrorLog("wrong type");
-                }
-            }
+           LogSys.InfoLog("Manuel exec :  \n ");
+LogSys.InfoLog("set engine speed to 1");
+
+while (true)
+{
+    Console.Write("m_exec : ");
+    string temp = string.Empty;
+    ConsoleKeyInfo keyInfo;
+    while ((keyInfo = Console.ReadKey(true)).Key != ConsoleKey.Enter)
+    {
+        temp += keyInfo.KeyChar;
+        Console.Write(keyInfo.KeyChar);
+    }
+    Console.WriteLine(); // Enter'a bastığınızda yeni satıra geçer.
+
+    if (!string.IsNullOrEmpty(temp))
+    {
+        TcpCmd.ManuelExecution(temp);
+        temp = string.Empty;
+    }
+    else
+    {
+        LogSys.ErrorLog("wrong type");
+    }
+}
+
         }
     }
 }
