@@ -14,8 +14,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
         internal static int pin2=2;
         internal static int pin3=3;
         internal static int pin4=15;
-        internal static int pwm1 = 4; 
-        internal static int pwm2 = 23; 
+        private static int pwm1 = 4; 
+        private static int pwm2 = 23; 
         public static void Preapare_Engine_Pins(){
             //motor 1
             GC.PreparePin(pin1,PinMode.Output);
@@ -27,8 +27,10 @@ namespace SanayideDijitalTeknolijiler_net8._0
             GC.PreparePin(pwm1, PinMode.Output);
             GC.PreparePin(pwm2, PinMode.Output);
         }
-        public static void SetEngineSpeed(int pin, double speed)
+        public static void SetEngineSpeed_E1()
         {
+            int pin=4;
+            double speed=1;
             int onTime = (int)(speed * 1000); 
             int offTime = 1000 - onTime;     
 
@@ -40,6 +42,22 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 Thread.Sleep(offTime);
             }
         }
+         public static void SetEngineSpeed_E2()
+        {
+            int pin=23;
+            double speed=1;
+            int onTime = (int)(speed * 1000); 
+            int offTime = 1000 - onTime;     
+
+            for (int i = 0; i < 100; i++)
+            {
+                GC.Write(pin, PinValue.High);
+                Thread.Sleep(onTime);
+                GC.Write(pin, PinValue.Low);
+                Thread.Sleep(offTime);
+            }
+        }
+
         public static void Engine_FORWARD()
         {
             GC.Write(pin1,PinValue.High);
