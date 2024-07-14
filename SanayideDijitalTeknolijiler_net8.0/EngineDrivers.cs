@@ -69,6 +69,13 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
             
         }
+        public static void Engine_BACKWARD()
+        {
+            GC.Write(pin1,PinValue.High);
+            GC.Write(pin2,PinValue.Low);
+            GC.Write(pin3,PinValue.Low);
+            GC.Write(pin4,PinValue.High);
+        }
         public static void Engine_LEFT()
         {
             //1.motor ileri
@@ -87,13 +94,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
             GC.Write(pin3,PinValue.High);
             GC.Write(pin4,PinValue.Low);
         }
-        public static void Engine_BACKWARD()
-        {
-            GC.Write(pin1,PinValue.Low);
-            GC.Write(pin2,PinValue.High);
-            GC.Write(pin3,PinValue.Low);
-            GC.Write(pin4,PinValue.High);
-        }
+        
         public static void Engine_RESET()
         {
             GC.Write(pin1,PinValue.Low);
