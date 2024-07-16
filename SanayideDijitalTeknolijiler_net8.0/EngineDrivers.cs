@@ -70,8 +70,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
         public static void Engine_FORWARD()
         {
-            GC.Write(pin1,PinValue.Low);
-            GC.Write(pin2,PinValue.High);
+            GC.Write(pin1,PinValue.High);
+            GC.Write(pin2,PinValue.Low);
 
             //2.motor ileri
             GC.Write(pin3,PinValue.High);
@@ -83,14 +83,16 @@ namespace SanayideDijitalTeknolijiler_net8._0
         {
             GC.Write(pin1,PinValue.Low);
             GC.Write(pin2,PinValue.Low);
+
+            //2.motor ileri
             GC.Write(pin3,PinValue.Low);
             GC.Write(pin4,PinValue.Low);
         }
         public static void Engine_LEFT()
         {
             //1.motor ileri
-            GC.Write(pin1,PinValue.High);
-            GC.Write(pin2,PinValue.Low);
+            GC.Write(pin1,PinValue.Low);
+            GC.Write(pin2,PinValue.High);
 
             //2.motor geri
             GC.Write(pin3,PinValue.Low);
@@ -109,10 +111,10 @@ namespace SanayideDijitalTeknolijiler_net8._0
         {
             
 
-            GC.Write(pin1,PinValue.High);
+            GC.Write(pin1,PinValue.Low);
             GC.Write(pin2,PinValue.Low);
             GC.Write(pin3,PinValue.Low);
-            GC.Write(pin4,PinValue.High);
+            GC.Write(pin4,PinValue.Low);
         }
 
     }
