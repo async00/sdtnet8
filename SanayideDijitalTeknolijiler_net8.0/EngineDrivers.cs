@@ -70,23 +70,25 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
         public static void Engine_FORWARD()
         {
-            GC.Write(pin1,PinValue.High);
-            GC.Write(pin2,PinValue.Low);
-
-            //2.motor ileri
-            GC.Write(pin3,PinValue.High);
-            GC.Write(pin4,PinValue.Low);
-
-            
-        }
-        public static void Engine_BACKWARD()
-        {
             GC.Write(pin1,PinValue.Low);
             GC.Write(pin2,PinValue.High);
 
             //2.motor ileri
             GC.Write(pin3,PinValue.Low);
             GC.Write(pin4,PinValue.High);
+
+            
+
+            
+        }
+        public static void Engine_BACKWARD()
+        {
+            GC.Write(pin1,PinValue.High);
+            GC.Write(pin2,PinValue.Low);
+
+            //2.motor ileri
+            GC.Write(pin3,PinValue.High);
+            GC.Write(pin4,PinValue.Low);
         }
         public static void Engine_LEFT()
         {
