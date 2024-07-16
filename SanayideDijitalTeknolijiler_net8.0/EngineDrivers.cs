@@ -29,6 +29,11 @@ namespace SanayideDijitalTeknolijiler_net8._0
         }
         public static void SetEngineSpeed_E1()
         {
+            //bu kodların acilen değişmesi lazım 
+            //bu kodların anlık olarak direkt veri girmesi lazım
+            //dönüşleri yaparken böyle bir for döngüsnde zaman kaybedersek olmaz
+            //anında hızı düşürmem gerekecek
+            //BU BİR YUNUSA UYARIDIR
             int pin=4;
             double speed=1;
             int onTime = (int)(speed * 1000); 
@@ -44,6 +49,11 @@ namespace SanayideDijitalTeknolijiler_net8._0
         }
          public static void SetEngineSpeed_E2()
         {
+            //bu kodların acilen değişmesi lazım 
+            //bu kodların anlık olarak direkt veri girmesi lazım
+            //dönüşleri yaparken böyle bir for döngüsnde zaman kaybedersek olmaz
+            //anında hızı düşürmem gerekecek
+            //BU BİR YUNUSA UYARIDIR
             int pin=23;
             double speed=1;
             int onTime = (int)(speed * 1000); 
