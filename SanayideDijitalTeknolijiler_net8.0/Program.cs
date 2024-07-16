@@ -24,7 +24,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
             LogSys.WarnLog("gergin ferhat");
             LogSys.ErrorLog("kızgın ferhat");
             LogSys.GrayLog("-------------------color board-------------------");
-
+            
             //MOTOR PİNLERİ HAZIRLA
             EngineDrivers.Preapare_Engine_Pins();
             LogSys.InfoLog("Motor pinleri hazırlandı");

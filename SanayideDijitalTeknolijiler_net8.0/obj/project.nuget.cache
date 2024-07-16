@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Lh9kH7xcRqyIWHKu2tRYPM74EiZoHvSyq7XGtALIJrCANWDYLRfpEt8FQ1LIG2vQA7i/62ve7OL4ICuET55RIg==",
+  "dgSpecHash": "O9JgS0fvRbJ0n6+kh/bG3x5DSlvOIbC6AP8t7pHRGYvRV/HBQ80FKDLzzutVRbJH0H+KENx2IGm3YXZVd4MI2Q==",
   "success": true,
-  "projectFilePath": "/home/async/Masaüstü/all2/sdtnet8/SanayideDijitalTeknolijiler_net8.0/SanayideDijitalTeknolijiler_net8.0.csproj",
+  "projectFilePath": "/home/async/sdtnet8/SanayideDijitalTeknolijiler_net8.0/SanayideDijitalTeknolijiler_net8.0.csproj",
   "expectedPackageFiles": [
     "/home/async/.nuget/packages/microsoft.netcore.platforms/1.1.1/microsoft.netcore.platforms.1.1.1.nupkg.sha512",
     "/home/async/.nuget/packages/microsoft.netcore.targets/1.1.0/microsoft.netcore.targets.1.1.0.nupkg.sha512",

@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using System.Device.Gpio;
 using SanayideDijitalTeknolijiler_net8._0;
 using Swan.Logging;
 using Unosquare.RaspberryIO.Abstractions;
@@ -78,6 +79,46 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 }
                 else if(message.Contains("pin4")){
                      EngineDrivers.pin4=Convert.ToInt32(message.Replace("pin4","").Trim());
+                }
+                else if(message.Contains("u_pin")){
+                    string cutted_l=message.Replace("u_pin","").Trim();
+                    if(cutted_l=="1"){
+                        if(cutted_l.Replace("1","")=="T"){
+                            GC.Write(Convert.ToInt32(cutted_l),PinValue.High);
+                            LogSys.SuccesLog(cutted_l+" set to high");
+                        }else{
+                             GC.Write(Convert.ToInt32(cutted_l),PinValue.Low);
+                            LogSys.SuccesLog(cutted_l+" set to low");
+                        }
+                    }
+                    if(cutted_l=="2"){
+                        if(cutted_l.Replace("2","")=="T"){
+                            GC.Write(Convert.ToInt32(cutted_l),PinValue.High);
+                            LogSys.SuccesLog(cutted_l+" set to high");
+                        }else{
+                             GC.Write(Convert.ToInt32(cutted_l),PinValue.Low);
+                            LogSys.SuccesLog(cutted_l+" set to low");
+                        }
+                    }
+                    if(cutted_l=="3"){
+                        if(cutted_l.Replace("3","")=="T"){
+                            GC.Write(Convert.ToInt32(cutted_l),PinValue.High);
+                            LogSys.SuccesLog(cutted_l+" set to high");
+                        }else{
+                             GC.Write(Convert.ToInt32(cutted_l),PinValue.Low);
+                            LogSys.SuccesLog(cutted_l+" set to low");
+                        }
+                    }
+                    if(cutted_l=="4"){
+                        if(cutted_l.Replace("4","")=="T"){
+                            GC.Write(Convert.ToInt32(cutted_l),PinValue.High);
+                            LogSys.SuccesLog(cutted_l+" set to high");
+                        }else{
+                             GC.Write(Convert.ToInt32(cutted_l),PinValue.Low);
+                            LogSys.SuccesLog(cutted_l+" set to low");
+                        }
+                    }
+
                 }
                 Thread.Sleep(150);
                

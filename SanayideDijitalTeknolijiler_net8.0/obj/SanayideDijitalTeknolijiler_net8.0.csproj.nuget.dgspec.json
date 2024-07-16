@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/async/Masaüstü/all2/sdtnet8/SanayideDijitalTeknolijiler_net8.0/SanayideDijitalTeknolijiler_net8.0.csproj": {}
+    "/home/async/sdtnet8/SanayideDijitalTeknolijiler_net8.0/SanayideDijitalTeknolijiler_net8.0.csproj": {}
   },
   "projects": {
-    "/home/async/Masaüstü/all2/sdtnet8/SanayideDijitalTeknolijiler_net8.0/SanayideDijitalTeknolijiler_net8.0.csproj": {
+    "/home/async/sdtnet8/SanayideDijitalTeknolijiler_net8.0/SanayideDijitalTeknolijiler_net8.0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/async/Masaüstü/all2/sdtnet8/SanayideDijitalTeknolijiler_net8.0/SanayideDijitalTeknolijiler_net8.0.csproj",
+        "projectUniqueName": "/home/async/sdtnet8/SanayideDijitalTeknolijiler_net8.0/SanayideDijitalTeknolijiler_net8.0.csproj",
         "projectName": "SanayideDijitalTeknolijiler_net8.0",
-        "projectPath": "/home/async/Masaüstü/all2/sdtnet8/SanayideDijitalTeknolijiler_net8.0/SanayideDijitalTeknolijiler_net8.0.csproj",
+        "projectPath": "/home/async/sdtnet8/SanayideDijitalTeknolijiler_net8.0/SanayideDijitalTeknolijiler_net8.0.csproj",
         "packagesPath": "/home/async/.nuget/packages/",
-        "outputPath": "/home/async/Masaüstü/all2/sdtnet8/SanayideDijitalTeknolijiler_net8.0/obj/",
+        "outputPath": "/home/async/sdtnet8/SanayideDijitalTeknolijiler_net8.0/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/async/.nuget/NuGet/NuGet.Config"
