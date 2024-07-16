@@ -10,10 +10,10 @@ namespace SanayideDijitalTeknolijiler_net8._0
     internal class EngineDrivers
     {
         
-        internal static int pin1=14;
-        internal static int pin2=3;
-        internal static int pin3=2;
-        internal static int pin4=15;
+        internal static int pin1=4;
+        internal static int pin2=14;
+        internal static int pin3=15;
+        internal static int pin4=18;
         private static int pwm1 = 4; 
         private static int pwm2 = 23; 
         public static void Preapare_Engine_Pins(){
