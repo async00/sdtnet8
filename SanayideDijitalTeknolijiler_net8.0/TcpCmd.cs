@@ -31,8 +31,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     EngineDrivers.Engine_RIGHT();
                 }
                 else if(message == "automode"){
-                    `   // 5 6 23 24
-
+                      // 5 6 23 24
+                
 
                 }
                 else if(message=="stop"){
@@ -58,6 +58,12 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 }
                 else if(message=="lf"){
                     LogSys.SuccesLog("LEFT");
+                    EngineDrivers.Engine_LEFT();
+                    
+                }
+                 else if(message=="automode"){
+                    TCRT5000.döndü_hanım();
+                    
                 }
                 else if(message=="rg"){
                     LogSys.SuccesLog("RIGHT");

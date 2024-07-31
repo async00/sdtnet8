@@ -38,7 +38,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
             //çizgi sensöründen gelen verileri işle ve  lrpin1...'lere eşitle
             TCRT5000.SpesificLineRead(1);
             tcrt5_t=new Thread(TCRT5000.ListenPins);
-        //    tcrt5_t.Start();
+            tcrt5_t.Start();
             
             LogSys.SuccesLog("Çizgi sensörü dinleniyor");
 

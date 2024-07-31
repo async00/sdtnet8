@@ -6,11 +6,12 @@ namespace SanayideDijitalTeknolijiler_net8._0
     public static class TCRT5000
     {
         internal static int SpesificLineRead(int pin){
-            GC.PreparePin(2,PinMode.Input);
+            // 5 pin 
+            GC.PreparePin(26,PinMode.Input);
+            GC.PreparePin(19,PinMode.Input);
+            GC.PreparePin(13,PinMode.Input);
             GC.PreparePin(3,PinMode.Input);
             GC.PreparePin(4,PinMode.Input);
-            GC.PreparePin(23,PinMode.Input);
-            GC.PreparePin(24,PinMode.Input);
             if(pin==1){
                 return GC.ReadPin(2);
             }
@@ -40,18 +41,36 @@ namespace SanayideDijitalTeknolijiler_net8._0
             }
         }
         internal static void döndü_hanım(){
+            Console.WriteLine("Distance : "+DistanceSens.GetDistance());
             while(true){
+               if (Console.KeyAvailable)
+            {
+                var key = Console.ReadKey(intercept: true);
+                if (key.Key == ConsoleKey.X)
+                {
+                    Console.WriteLine("x pressed exiting");
+                    break;
+                }
+                if (key.Key == ConsoleKey.Spacebar)
+                {
+                    Console.WriteLine("breaaak ");
+                    EngineDrivers.Engine_RESET();
+                }
+
+            }
                
-               Console.WriteLine("Distance : "+DistanceSens.GetDistance());
                 //siyasi ağaç ferhat
                 if(Program.lrpin1==1 && Program.lrpin2==1){
                     Console.WriteLine("solcu ferhat");
+                    EngineDrivers.Engine_LEFT();
                 }
                 if(Program.lrpin4==1 && Program.lrpin5==1){
                     Console.WriteLine("sağcı ferhat");
+                    EngineDrivers.Engine_RIGHT();
                 }
                 if(Program.lrpin3==1){
                     Console.WriteLine("merkeziyetçi ferhat");
+                    EngineDrivers.Engine_FORWARD();
                 }
                 Thread.Sleep(150);
                 TCRT5000.WriteAllPins();
