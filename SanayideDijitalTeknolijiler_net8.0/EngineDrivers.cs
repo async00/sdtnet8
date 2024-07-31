@@ -12,8 +12,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
         
         internal static int pin1=5;
         internal static int pin2=6;
-        internal static int pin3=23;
-        internal static int pin4=24;
+        internal static int pin3=20;
+        internal static int pin4=21;
         private static int pwm1 = 4; 
         private static int pwm2 = 23; 
         public static void Preapare_Engine_Pins(){
@@ -58,6 +58,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
             double speed=1;
             int onTime = (int)(speed * 1000); 
             int offTime = 1000 - onTime;     
+            
 
             for (int i = 0; i < 100; i++)
             {
@@ -97,8 +98,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
             GC.Write(pin2,PinValue.Low);
 
             //2.motor geri
-            GC.Write(pin3,PinValue.Low);
-            GC.Write(pin4,PinValue.High);
+            GC.Write(pin3,PinValue.High);
+            GC.Write(pin4,PinValue.Low);
         }
         public static void Engine_RIGHT()
         {
