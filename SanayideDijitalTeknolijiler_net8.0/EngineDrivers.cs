@@ -98,8 +98,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
             GC.Write(pin2,PinValue.Low);
 
             //2.motor geri
-            GC.Write(pin3,PinValue.High);
-            GC.Write(pin4,PinValue.Low);
+            GC.Write(pin3,PinValue.Low);
+            GC.Write(pin4,PinValue.High);
         }
         public static void Engine_RIGHT()
         {
