@@ -93,10 +93,10 @@ namespace SanayideDijitalTeknolijiler_net8._0
         }
         public static void Engine_LEFT()
         {
-            GC.Write(pin1,PinValue.High);
+            GC.Write(pin1,PinValue.Low);
             GC.Write(pin2,PinValue.Low);
             GC.Write(pin3,PinValue.Low);
-            GC.Write(pin4,PinValue.Low);
+            GC.Write(pin4,PinValue.High);
         }
         public static void Engine_RIGHT()
         {

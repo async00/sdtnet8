@@ -73,26 +73,26 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     EngineDrivers.Engine_FORWARD();
                 }
                 Thread.Sleep(150);
-               // TCRT5000.WriteAllPins();
+                TCRT5000.WriteAllPins();
             }
         }
         internal static void ListenPins(){  
-            GC.PreparePin(2,PinMode.Input);
+            GC.PreparePin(26,PinMode.Input);
+            GC.PreparePin(19,PinMode.Input);
+            GC.PreparePin(13,PinMode.Input);
             GC.PreparePin(3,PinMode.Input);
             GC.PreparePin(4,PinMode.Input);
-            GC.PreparePin(23,PinMode.Input);
-            GC.PreparePin(24,PinMode.Input);
 
 
 
             while(1==1){
             Thread.Sleep(30);
             
-                Program.lrpin1=GC.ReadPin(2);
-                Program.lrpin2=GC.ReadPin(3);
-                Program.lrpin3=GC.ReadPin(4);
-                Program.lrpin4=GC.ReadPin(23);
-                Program.lrpin5=GC.ReadPin(24);
+                Program.lrpin1=GC.ReadPin(26);
+                Program.lrpin2=GC.ReadPin(19);
+                Program.lrpin3=GC.ReadPin(13);
+                Program.lrpin4=GC.ReadPin(3);
+                Program.lrpin5=GC.ReadPin(4);
          
 
 
@@ -108,12 +108,12 @@ namespace SanayideDijitalTeknolijiler_net8._0
             //preapare pins 2  3  4  14 15
             //debug için string döndür 
             string wreturn=string.Empty;
-            GC.PreparePin(2,PinMode.Input);
+            GC.PreparePin(26,PinMode.Input);
+            GC.PreparePin(19,PinMode.Input);
+            GC.PreparePin(13,PinMode.Input);
             GC.PreparePin(3,PinMode.Input);
             GC.PreparePin(4,PinMode.Input);
-            GC.PreparePin(23,PinMode.Input);
-            GC.PreparePin(24,PinMode.Input);
-            int[] pins = { 2,3,4,23,24 };
+            int[] pins = { 26,19,13,3,4 };
             Console.Clear();
             wreturn+="TCRT5000 Sensör Okumaları:";
             wreturn+="--------------------------";      
