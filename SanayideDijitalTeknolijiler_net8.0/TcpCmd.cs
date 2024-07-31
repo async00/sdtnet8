@@ -63,6 +63,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 }
                 else if(message == "drivermode")
                 {
+                    while(true){
                      if (Console.KeyAvailable)
             {
                 var key = Console.ReadKey(intercept: true);
@@ -97,7 +98,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 }
 
             }
-
+                    }
                 }
 
                 else if(message=="rg"){
