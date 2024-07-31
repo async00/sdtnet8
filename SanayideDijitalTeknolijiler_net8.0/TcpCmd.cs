@@ -61,6 +61,45 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     TCRT5000.döndü_hanım();
                     
                 }
+                else if(message == "drivermode")
+                {
+                     if (Console.KeyAvailable)
+            {
+                var key = Console.ReadKey(intercept: true);
+                if (key.Key == ConsoleKey.W)
+                {
+                    EngineDrivers.Engine_RESET();
+                    EngineDrivers.Engine_FORWARD();
+                    
+                }
+                if (key.Key == ConsoleKey.A)
+                {
+                     EngineDrivers.Engine_RESET();
+                    EngineDrivers.Engine_LEFT();
+                    
+                }
+                if (key.Key == ConsoleKey.S)
+                {
+                     EngineDrivers.Engine_RESET();
+                    EngineDrivers.Engine_BACKWARD();
+                    
+                }
+                if (key.Key == ConsoleKey.D)
+                {
+                    EngineDrivers.Engine_RESET();
+                    EngineDrivers.Engine_RIGHT();
+                    
+                }
+                if (key.Key == ConsoleKey.Spacebar)
+                {
+                    Console.WriteLine("breaaak ");
+                    EngineDrivers.Engine_RESET();
+                }
+
+            }
+
+                }
+
                 else if(message=="rg"){
                     LogSys.SuccesLog("RIGHT");
                     EngineDrivers.Engine_RIGHT();
