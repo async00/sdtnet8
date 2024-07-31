@@ -61,13 +61,13 @@ namespace SanayideDijitalTeknolijiler_net8._0
                
                 //siyasi ağaç ferhat
                 if(Program.lrpin1==1 && Program.lrpin2==1){
-                    
-                    Console.WriteLine("solcu ferhat");
-                    EngineDrivers.Engine_LEFT();
-                }
-                if(Program.lrpin4==1 && Program.lrpin5==1){
                     Console.WriteLine("sağcı ferhat");
                     EngineDrivers.Engine_RIGHT();
+                   
+                }
+                if(Program.lrpin4==1 && Program.lrpin5==1){
+                     Console.WriteLine("solcu ferhat");
+                    EngineDrivers.Engine_LEFT();
                 }
                 if(Program.lrpin3==1){
                     Console.WriteLine("merkeziyetçi ferhat");
