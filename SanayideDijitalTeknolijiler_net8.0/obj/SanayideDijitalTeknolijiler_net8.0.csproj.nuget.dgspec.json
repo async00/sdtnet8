@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/async/sdtnet8/SanayideDijitalTeknolijiler_net8.0/SanayideDijitalTeknolijiler_net8.0.csproj": {}
+    "/home/arch7/Şablonlar/SanayideDijitalTeknolijiler_net8.0/SanayideDijitalTeknolijiler_net8.0.csproj": {}
   },
   "projects": {
-    "/home/async/sdtnet8/SanayideDijitalTeknolijiler_net8.0/SanayideDijitalTeknolijiler_net8.0.csproj": {
+    "/home/arch7/Şablonlar/SanayideDijitalTeknolijiler_net8.0/SanayideDijitalTeknolijiler_net8.0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/async/sdtnet8/SanayideDijitalTeknolijiler_net8.0/SanayideDijitalTeknolijiler_net8.0.csproj",
+        "projectUniqueName": "/home/arch7/Şablonlar/SanayideDijitalTeknolijiler_net8.0/SanayideDijitalTeknolijiler_net8.0.csproj",
         "projectName": "SanayideDijitalTeknolijiler_net8.0",
-        "projectPath": "/home/async/sdtnet8/SanayideDijitalTeknolijiler_net8.0/SanayideDijitalTeknolijiler_net8.0.csproj",
-        "packagesPath": "/home/async/.nuget/packages/",
-        "outputPath": "/home/async/sdtnet8/SanayideDijitalTeknolijiler_net8.0/obj/",
+        "projectPath": "/home/arch7/Şablonlar/SanayideDijitalTeknolijiler_net8.0/SanayideDijitalTeknolijiler_net8.0.csproj",
+        "packagesPath": "/home/arch7/.nuget/packages/",
+        "outputPath": "/home/arch7/Şablonlar/SanayideDijitalTeknolijiler_net8.0/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/async/.nuget/NuGet/NuGet.Config"
+          "/home/arch7/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -32,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -69,7 +74,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.6, 8.0.6]"
+              "version": "[8.0.7, 8.0.7]"
             }
           ],
           "frameworkReferences": {
@@ -77,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.106/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

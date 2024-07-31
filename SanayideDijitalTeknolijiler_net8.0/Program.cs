@@ -46,8 +46,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
             LogSys.InfoLog("set engine speed to 1");
             Thread yunusmk=new Thread(EngineDrivers.SetEngineSpeed_E1);
             Thread yunusmk1=new Thread(EngineDrivers.SetEngineSpeed_E2);
-            yunusmk.Start();
-            yunusmk1.Start();
+           // yunusmk.Start();
+            // yunusmk1.Start();
             while(true){
                 Console.Write("m_exec : ");
                 string temp = Console.ReadLine();
