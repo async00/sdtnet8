@@ -61,6 +61,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                
                 //siyasi ağaç ferhat
                 if(Program.lrpin1==1 && Program.lrpin2==1){
+                    
                     Console.WriteLine("solcu ferhat");
                     EngineDrivers.Engine_LEFT();
                 }
@@ -73,7 +74,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     EngineDrivers.Engine_FORWARD();
                 }
                 Thread.Sleep(150);
-                TCRT5000.WriteAllPins();
+              //  TCRT5000.WriteAllPins();
             }
         }
         internal static void ListenPins(){  
