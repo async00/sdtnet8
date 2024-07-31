@@ -30,11 +30,6 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     LogSys.SuccesLog("RIGHT");
                     EngineDrivers.Engine_RIGHT();
                 }
-                else if(message == "automode"){
-                      // 5 6 23 24
-                
-
-                }
                 else if(message=="stop"){
                     LogSys.SuccesLog("STOP");
                     EngineDrivers.Engine_RESET();
@@ -62,6 +57,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     
                 }
                  else if(message=="automode"){
+                    LogSys.ErrorLog("dondu hanim ");
                     TCRT5000.döndü_hanım();
                     
                 }

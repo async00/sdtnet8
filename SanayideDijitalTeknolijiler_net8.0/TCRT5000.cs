@@ -41,7 +41,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
             }
         }
         internal static void döndü_hanım(){
-            Console.WriteLine("Distance : "+DistanceSens.GetDistance());
+            //Console.WriteLine("Distance : "+DistanceSens.GetDistance());
             while(true){
                if (Console.KeyAvailable)
             {
@@ -73,7 +73,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     EngineDrivers.Engine_FORWARD();
                 }
                 Thread.Sleep(150);
-                TCRT5000.WriteAllPins();
+               // TCRT5000.WriteAllPins();
             }
         }
         internal static void ListenPins(){  
