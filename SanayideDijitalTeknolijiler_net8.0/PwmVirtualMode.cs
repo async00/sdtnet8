@@ -16,7 +16,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 GC.PreparePin(27,PinMode.Output);
                 VirtualPwm vpwm14=new VirtualPwm(14,100);
                 VirtualPwm vpwm15=new VirtualPwm(15,100);
-                var pwmclass12  = new PwmController(12,100);
+                var pwmclass12  = new PwmController(18,100);
                 var pwmclass19=new PwmController(19,100);
                 string previouskey=string.Empty;
             while(true){
@@ -34,8 +34,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     GC.Write(3,PinValue.High);
                     GC.Write(17,PinValue.High);
                     GC.Write(27,PinValue.High);
-                    vpwm14.SetPercent(100);
-                    vpwm15.SetPercent(0);
+                //    vpwm14.SetPercent(100);
+                 //   vpwm15.SetPercent(0);
                     pwmclass12.SetDutyCycle(0);
                     pwmclass19.SetDutyCycle(255);
                     pwmclass12.Start();
