@@ -12,7 +12,10 @@ namespace SanayideDijitalTeknolijiler_net8._0
         {
                 GC.PreparePin(2,PinMode.Output);
                 GC.PreparePin(3,PinMode.Output);
-
+                GC.PreparePin(17,PinMode.Output);
+                GC.PreparePin(27,PinMode.Output);
+                VirtualPwm vpwm14=new VirtualPwm(14,1000);
+                VirtualPwm vpwm15=new VirtualPwm(15,1000);
                 var pwmclass12  = new PwmController(12,100);
                 var pwmclass19=new PwmController(19,100);
                 string previouskey=string.Empty;
@@ -23,11 +26,16 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 var key = Console.ReadKey(intercept: true);
                 if (key.Key == ConsoleKey.W && !(previouskey=="w"))
                 {
+                    vpwm14.Stop();
+                    vpwm15.Stop();
                     pwmclass12.Stop();
                     pwmclass19.Stop();
                     GC.Write(2,PinValue.High);
                     GC.Write(3,PinValue.High);
-
+                    GC.Write(17,PinValue.High);
+                    GC.Write(27,PinValue.High);
+                    vpwm14.SetPercent(100);
+                    vpwm14.SetPercent(0);
                     pwmclass12.SetDutyCycle(255);
                     pwmclass19.SetDutyCycle(0);
                     pwmclass12.Start();
@@ -42,6 +50,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     pwmclass19.Stop();
                     GC.Write(2,PinValue.High);
                     GC.Write(3,PinValue.High);
+                    GC.Write(17,PinValue.High);
+                    GC.Write(27,PinValue.High);
 
                     //12 SA GMOTOR ILERI
                     //13 SAG MOTOER GERI 
@@ -55,14 +65,20 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 }
                 if (key.Key == ConsoleKey.S&& !(previouskey=="s"))
                 {
-                        pwmclass12.Stop();
+                    vpwm14.Stop();
+                    vpwm15.Stop();
+                    pwmclass12.Stop();
                     pwmclass19.Stop();
                   GC.Write(2,PinValue.High);
                     GC.Write(3,PinValue.High);
+                    GC.Write(17,PinValue.High);
+                    GC.Write(27,PinValue.High);
 
                   
                     //12 SA GMOTOR ILERI
                     //13 SAG MOTOER GERI 
+                    vpwm14.SetPercent(0);
+                    vpwm15.SetPercent(100);
                     pwmclass12.SetDutyCycle(0);
                     pwmclass19.SetDutyCycle(255);
                     pwmclass12.Start();
@@ -76,6 +92,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     pwmclass19.Stop();
                    GC.Write(2,PinValue.High);
                     GC.Write(3,PinValue.High);
+                    GC.Write(17,PinValue.High);
+                    GC.Write(27,PinValue.High);
 
                   
                     //12 SA GMOTOR ILERI
