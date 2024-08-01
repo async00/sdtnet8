@@ -43,6 +43,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
         internal static void ManuelExecution(string message){
                 GC.PreparePin(2,PinMode.Output);
                 GC.PreparePin(3,PinMode.Output);
+                GC.PreparePin(17,PinMode.Output);
+                GC.PreparePin(27,PinMode.Output);
                 var pwmclass12  = new PwmController(12,100);
                 var pwmclass18=new PwmController(18,100);
                 var pwmclass13  = new PwmController(13,100);
@@ -89,33 +91,93 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 var key = Console.ReadKey(intercept: true);
                 if (key.Key == ConsoleKey.W)
                 {
+                    pwmclass12.Stop();
+                    pwmclass13.Stop();
+                    pwmclass18.Stop();
+                    pwmclass19.Stop();
                     GC.Write(2,PinValue.High);
                     GC.Write(3,PinValue.High);
-                  
+                    GC.Write(17,PinValue.High);
+                    GC.Write(27,PinValue.High);
                     pwmclass12.SetDutyCycle(255);
                     pwmclass13.SetDutyCycle(0);
+                    pwmclass18.SetDutyCycle(255);
+                    pwmclass19.SetDutyCycle(0);
                     pwmclass12.Start();
                     pwmclass13.Start();
-                    LogSys.InfoLog("pwm12 255 yazdir !! ");
+                    LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
                     
                 }
                 if (key.Key == ConsoleKey.A)
                 {
-                    EngineDrivers.Engine_RESET();
-                    EngineDrivers.Engine_LEFT();
-                    EngineDrivers.Engine_RIGHT(true);
+                     pwmclass12.Stop();
+                    pwmclass13.Stop();
+                    pwmclass18.Stop();
+                    pwmclass19.Stop();
+                   GC.Write(2,PinValue.High);
+                    GC.Write(3,PinValue.High);
+                    GC.Write(17,PinValue.High);
+                    GC.Write(27,PinValue.High);
+                    //12 SA GMOTOR ILERI
+                    //13 SAG MOTOER GERI 
+                    
+                    pwmclass12.SetDutyCycle(0);
+                    pwmclass13.SetDutyCycle(255);
+                    pwmclass18.SetDutyCycle(255);
+                    pwmclass19.SetDutyCycle(0);
+                    pwmclass12.Start();
+                    pwmclass13.Start();
+                    pwmclass18.Start();
+                    pwmclass19.Start();
+                    LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
                 }
                 if (key.Key == ConsoleKey.S)
                 {
-                     EngineDrivers.Engine_RESET();
-                    EngineDrivers.Engine_FORWARD();
+                    pwmclass12.Stop();
+                    pwmclass13.Stop();
+                    pwmclass18.Stop();
+                    pwmclass19.Stop();
+                  GC.Write(2,PinValue.High);
+                    GC.Write(3,PinValue.High);
+                    GC.Write(17,PinValue.High);
+                    GC.Write(27,PinValue.High);
+                  
+                    //12 SA GMOTOR ILERI
+                    //13 SAG MOTOER GERI 
+                    pwmclass12.SetDutyCycle(0);
+                    pwmclass13.SetDutyCycle(255);
+                    pwmclass18.SetDutyCycle(0);
+                    pwmclass19.SetDutyCycle(255);
+                    pwmclass12.Start();
+                    pwmclass13.Start();
+                    pwmclass18.Start();
+                    pwmclass19.Start();
+                    LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
                     
                 }
                 if (key.Key == ConsoleKey.D)
                 {
-                    EngineDrivers.Engine_RESET();
-                    EngineDrivers.Engine_RIGHT();
-                    EngineDrivers.Engine_LEFT(true);
+                    pwmclass12.Stop();
+                    pwmclass13.Stop();
+                    pwmclass18.Stop();
+                    pwmclass19.Stop();
+                   GC.Write(2,PinValue.High);
+                    GC.Write(3,PinValue.High);
+                    GC.Write(17,PinValue.High);
+                    GC.Write(27,PinValue.High);
+                  
+                    //12 SA GMOTOR ILERI
+                    //13 SAG MOTOER GERI 
+                    
+                    pwmclass12.SetDutyCycle(255);
+                    pwmclass13.SetDutyCycle(0);
+                    pwmclass18.SetDutyCycle(0);
+                    pwmclass19.SetDutyCycle(255);
+                    pwmclass12.Start();
+                    pwmclass13.Start();
+                    pwmclass18.Start();
+                    pwmclass19.Start();
+                    LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
                     
                 }
                 if (key.Key == ConsoleKey.Spacebar)
