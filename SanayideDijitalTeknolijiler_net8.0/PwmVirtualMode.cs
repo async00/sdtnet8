@@ -14,8 +14,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 GC.PreparePin(3,PinMode.Output);
                 GC.PreparePin(17,PinMode.Output);
                 GC.PreparePin(27,PinMode.Output);
-                VirtualPwm vpwm14=new VirtualPwm(14,1000);
-                VirtualPwm vpwm15=new VirtualPwm(15,1000);
+                VirtualPwm vpwm14=new VirtualPwm(14,100);
+                VirtualPwm vpwm15=new VirtualPwm(15,100);
                 var pwmclass12  = new PwmController(12,100);
                 var pwmclass19=new PwmController(19,100);
                 string previouskey=string.Empty;
@@ -35,8 +35,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     GC.Write(17,PinValue.High);
                     GC.Write(27,PinValue.High);
                     
-                    pwmclass12.SetDutyCycle(0);
-                    pwmclass19.SetDutyCycle(255);
+                    pwmclass12.SetDutyCycle(255);
+                    pwmclass19.SetDutyCycle(0);
                     pwmclass12.Start();
                     pwmclass19.Start();
                     LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
