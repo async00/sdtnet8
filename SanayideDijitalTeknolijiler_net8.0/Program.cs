@@ -12,6 +12,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
         internal static Thread tcrt5_t;
         static void Main(string[] args)
         {   
+            //12 13
             //sistemi başlat ve tcpden gelen verileri dinle
             LogSys.InfoLog("LogSystem running");
             Thread listenerserver_thread = new Thread(TcpServer.Listen);

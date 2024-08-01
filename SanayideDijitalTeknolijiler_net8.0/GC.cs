@@ -10,8 +10,10 @@ public static class GC
     private static readonly GpioController _gpioController = new GpioController();
 
     // Pin'i açma ve modunu ayarlama
+    
     public static void PreparePin(int pinNumber, PinMode mode)
     {
+      
         if (!_gpioController.IsPinOpen(pinNumber))
         {
             _gpioController.OpenPin(pinNumber, mode);
@@ -50,6 +52,31 @@ public static class GC
             return -1;
         }
     }
+
+    // PWM PIN CONTROL 
+    public static void PreparePwmPin(int pinNumber, int frequency, int range)
+        {
+            Pi.Init<BootstrapWiringPi>();
+            var pin = Pi.Gpio[pinNumber];
+            pin.PinMode = GpioPinDriveMode.PwmOutput;
+            pin.PwmMode = PwmMode.Balanced;
+            pin.PwmRange = range;
+            pin.PwmClockDivisor = frequency;
+        }
+
+        // PWM pini değer yazma
+        public static void WritePwm(int pinNumber, int value)
+        {
+            var pin = Pi.Gpio[pinNumber];
+            pin.PwmRegister = value;
+        }
+
+        // PWM pini kapatma
+        public static void ClosePwmPin(int pinNumber)
+        {
+            var pin = Pi.Gpio[pinNumber];
+            pin.PinMode = GpioPinDriveMode.Input;
+        }
     //ÇIAKRKEN BÜTÜN PİNLERİ KAPAT 
     public static void ClosePin(int pinNumber)
     {

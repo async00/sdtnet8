@@ -47,6 +47,15 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     LogSys.SuccesLog("GO GO");
                     EngineDrivers.Engine_FORWARD();
                 }
+                else if(message =="pwmstart"){
+                    //12 13 pin 255 ver 
+                    GC.PreparePwmPin(13,192,1024);
+                    GC.WritePwm(13,255);
+
+                    //2.motor 
+                    GC.PreparePwmPin(12,192,1024);
+                    GC.WritePwm(12,255);
+                }
                 else if(message=="bw"){
                     LogSys.SuccesLog("BACKWARD");
                     EngineDrivers.Engine_BACKWARD();
