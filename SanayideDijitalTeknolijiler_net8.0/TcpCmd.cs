@@ -72,6 +72,9 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     pwmclass19.Start();
                     LogSys.InfoLog("pwm pins setted and starrted  ");
                 }
+                else if(message == "virtualmode"){
+                    PwmVirtualMode.Start();
+                }
                 else if (message== "pwmoff"){
                     pwmclass12.Stop();
                     pwmclass18.Stop();
