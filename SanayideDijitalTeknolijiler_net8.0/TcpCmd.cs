@@ -70,25 +70,26 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 if (key.Key == ConsoleKey.W)
                 {
                     EngineDrivers.Engine_RESET();
-                    EngineDrivers.Engine_FORWARD();
+                    EngineDrivers.Engine_BACKWARD();
                     
                 }
                 if (key.Key == ConsoleKey.A)
                 {
                      EngineDrivers.Engine_RESET();
                     EngineDrivers.Engine_LEFT();
-                    
+                    EngineDrivers.Engine_RIGHT(true);
                 }
                 if (key.Key == ConsoleKey.S)
                 {
                      EngineDrivers.Engine_RESET();
-                    EngineDrivers.Engine_BACKWARD();
+                    EngineDrivers.Engine_FORWARD();
                     
                 }
                 if (key.Key == ConsoleKey.D)
                 {
                     EngineDrivers.Engine_RESET();
                     EngineDrivers.Engine_RIGHT();
+                    EngineDrivers.Engine_LEFT(true);
                     
                 }
                 if (key.Key == ConsoleKey.Spacebar)
