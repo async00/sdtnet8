@@ -91,10 +91,6 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 var key = Console.ReadKey(intercept: true);
                 if (key.Key == ConsoleKey.W)
                 {
-                    pwmclass12.Stop();
-                    pwmclass13.Stop();
-                    pwmclass18.Stop();
-                    pwmclass19.Stop();
                     GC.Write(2,PinValue.High);
                     GC.Write(3,PinValue.High);
                     GC.Write(17,PinValue.High);
@@ -105,15 +101,14 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     pwmclass19.SetDutyCycle(0);
                     pwmclass12.Start();
                     pwmclass13.Start();
+                    pwmclass18.Start();
+                    pwmclass19.Start();
                     LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
                     
                 }
                 if (key.Key == ConsoleKey.A)
                 {
-                     pwmclass12.Stop();
-                    pwmclass13.Stop();
-                    pwmclass18.Stop();
-                    pwmclass19.Stop();
+
                    GC.Write(2,PinValue.High);
                     GC.Write(3,PinValue.High);
                     GC.Write(17,PinValue.High);
@@ -133,10 +128,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 }
                 if (key.Key == ConsoleKey.S)
                 {
-                    pwmclass12.Stop();
-                    pwmclass13.Stop();
-                    pwmclass18.Stop();
-                    pwmclass19.Stop();
+
                   GC.Write(2,PinValue.High);
                     GC.Write(3,PinValue.High);
                     GC.Write(17,PinValue.High);
@@ -157,10 +149,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 }
                 if (key.Key == ConsoleKey.D)
                 {
-                    pwmclass12.Stop();
-                    pwmclass13.Stop();
-                    pwmclass18.Stop();
-                    pwmclass19.Stop();
+
                    GC.Write(2,PinValue.High);
                     GC.Write(3,PinValue.High);
                     GC.Write(17,PinValue.High);
