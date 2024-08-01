@@ -15,12 +15,13 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
                 var pwmclass12  = new PwmController(12,100);
                 var pwmclass19=new PwmController(19,100);
-
+                string previouskey=string.Empty;
             while(true){
+                    
                      if (Console.KeyAvailable)
-            {
+                {
                 var key = Console.ReadKey(intercept: true);
-                if (key.Key == ConsoleKey.W)
+                if (key.Key == ConsoleKey.W && !(previouskey=="w"))
                 {
                     pwmclass12.Stop();
                     pwmclass19.Stop();
@@ -32,9 +33,10 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     pwmclass12.Start();
                     pwmclass19.Start();
                     LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
+                    previouskey="w";
                     
                 }
-                if (key.Key == ConsoleKey.A)
+                if (key.Key == ConsoleKey.A&& !(previouskey=="a"))
                 {
                     pwmclass12.Stop();
                     pwmclass19.Stop();
@@ -49,8 +51,9 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     pwmclass12.Start();
                     pwmclass19.Start();
                     LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
+                    previouskey="a";
                 }
-                if (key.Key == ConsoleKey.S)
+                if (key.Key == ConsoleKey.S&& !(previouskey=="s"))
                 {
                         pwmclass12.Stop();
                     pwmclass19.Stop();
@@ -65,9 +68,9 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     pwmclass12.Start();
                     pwmclass19.Start();
                     LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
-                    
+                    previouskey="s";
                 }
-                if (key.Key == ConsoleKey.D)
+                if (key.Key == ConsoleKey.D&& !(previouskey=="d"))
                 {
                     pwmclass12.Stop();
                     pwmclass19.Stop();
@@ -83,6 +86,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     pwmclass12.Start();
                     pwmclass19.Start();
                     LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
+                    previouskey="d";
                     
                 }
                 if (key.Key == ConsoleKey.Spacebar)
