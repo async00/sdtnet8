@@ -91,9 +91,11 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 {
                     GC.Write(2,PinValue.High);
                     GC.Write(3,PinValue.High);
+                  
                     pwmclass12.SetDutyCycle(255);
                     pwmclass13.SetDutyCycle(0);
-                 
+                    pwmclass12.Start();
+                    pwmclass13.Start();
                     LogSys.InfoLog("pwm12 255 yazdir !! ");
                     
                 }
