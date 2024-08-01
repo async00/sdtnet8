@@ -41,8 +41,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     pwmclass19.Start();
                     LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
                     previouskey="w";
-                    vpwm14.SetPercent(0);
                     vpwm14.SetPercent(100);
+                    vpwm15.SetPercent(0);
                 }
                 if (key.Key == ConsoleKey.A&& !(previouskey=="a"))
                 {
@@ -77,8 +77,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
                   
                     //12 SA GMOTOR ILERI
                     //13 SAG MOTOER GERI 
-                    vpwm14.SetPercent(100);
-                    vpwm15.SetPercent(0);
+                    vpwm14.SetPercent(0);
+                    vpwm15.SetPercent(100);
                     pwmclass12.SetDutyCycle(0);
                     pwmclass19.SetDutyCycle(255);
                     pwmclass12.Start();
