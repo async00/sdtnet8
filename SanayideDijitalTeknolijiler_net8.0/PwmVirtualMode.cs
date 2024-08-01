@@ -34,15 +34,15 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     GC.Write(3,PinValue.High);
                     GC.Write(17,PinValue.High);
                     GC.Write(27,PinValue.High);
-                    vpwm14.SetPercent(0);
-                    vpwm14.SetPercent(100);
+                    
                     pwmclass12.SetDutyCycle(0);
                     pwmclass19.SetDutyCycle(255);
                     pwmclass12.Start();
                     pwmclass19.Start();
                     LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
                     previouskey="w";
-                    
+                    vpwm14.SetPercent(0);
+                    vpwm14.SetPercent(100);
                 }
                 if (key.Key == ConsoleKey.A&& !(previouskey=="a"))
                 {
@@ -79,8 +79,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     //13 SAG MOTOER GERI 
                     vpwm14.SetPercent(100);
                     vpwm15.SetPercent(0);
-                    pwmclass12.SetDutyCycle(255);
-                    pwmclass19.SetDutyCycle(0);
+                    pwmclass12.SetDutyCycle(0);
+                    pwmclass19.SetDutyCycle(255);
                     pwmclass12.Start();
                     pwmclass19.Start();
                     LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
