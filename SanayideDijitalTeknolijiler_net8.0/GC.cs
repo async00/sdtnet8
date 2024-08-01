@@ -3,7 +3,7 @@ using System.Device.Gpio;
 using Unosquare.RaspberryIO.Abstractions;
 
 
-
+using Unosquare.RaspberryIO;
 namespace SanayideDijitalTeknolijiler_net8._0{
 public static class GC
 {
@@ -54,29 +54,6 @@ public static class GC
     }
 
     // PWM PIN CONTROL 
-    public static void PreparePwmPin(int pinNumber, int frequency, int range)
-        {
-            Pi.Init<BootstrapWiringPi>();
-            var pin = Pi.Gpio[pinNumber];
-            pin.PinMode = GpioPinDriveMode.PwmOutput;
-            pin.PwmMode = PwmMode.Balanced;
-            pin.PwmRange = range;
-            pin.PwmClockDivisor = frequency;
-        }
-
-        // PWM pini değer yazma
-        public static void WritePwm(int pinNumber, int value)
-        {
-            var pin = Pi.Gpio[pinNumber];
-            pin.PwmRegister = value;
-        }
-
-        // PWM pini kapatma
-        public static void ClosePwmPin(int pinNumber)
-        {
-            var pin = Pi.Gpio[pinNumber];
-            pin.PinMode = GpioPinDriveMode.Input;
-        }
     //ÇIAKRKEN BÜTÜN PİNLERİ KAPAT 
     public static void ClosePin(int pinNumber)
     {
