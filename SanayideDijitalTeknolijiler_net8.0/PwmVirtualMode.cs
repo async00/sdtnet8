@@ -10,7 +10,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
     {
         internal static void  Start()
         {
-                GC.PreparePin(2,PinMode.Output);
+                GC.PreparePin(26,PinMode.Output);
                 GC.PreparePin(3,PinMode.Output);
                 GC.PreparePin(17,PinMode.Output);
                 GC.PreparePin(27,PinMode.Output);
@@ -30,17 +30,17 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     vpwm15.Stop();
                     pwmclass12.Stop();
                     pwmclass19.Stop();
-                    GC.Write(2,PinValue.High);
+                    GC.Write(26,PinValue.High);
                     GC.Write(3,PinValue.High);
                     GC.Write(17,PinValue.High);
                     GC.Write(27,PinValue.High);
-                //    vpwm14.SetPercent(100);
-                 //   vpwm15.SetPercent(0);
+                    vpwm14.SetPercent(100);
+                    vpwm15.SetPercent(0);
                     pwmclass12.SetDutyCycle(0);
                     pwmclass19.SetDutyCycle(255);
                     pwmclass12.Start();
                     pwmclass19.Start();
-                    LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
+                    LogSys.InfoLog("pWWwm12 255 yazdir !! ILERI IIII  ");
                     previouskey="w";
                    
                 }
@@ -48,7 +48,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 {
                     pwmclass12.Stop();
                     pwmclass19.Stop();
-                    GC.Write(2,PinValue.High);
+                    GC.Write(26,PinValue.High);
                     GC.Write(3,PinValue.High);
                     GC.Write(17,PinValue.High);
                     GC.Write(27,PinValue.High);
@@ -69,7 +69,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     vpwm15.Stop();
                     pwmclass12.Stop();
                     pwmclass19.Stop();
-                  GC.Write(2,PinValue.High);
+                  GC.Write(26,PinValue.High);
                     GC.Write(3,PinValue.High);
                     GC.Write(17,PinValue.High);
                     GC.Write(27,PinValue.High);
@@ -90,7 +90,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 {
                     pwmclass12.Stop();
                     pwmclass19.Stop();
-                   GC.Write(2,PinValue.High);
+                   GC.Write(26,PinValue.High);
                     GC.Write(3,PinValue.High);
                     GC.Write(17,PinValue.High);
                     GC.Write(27,PinValue.High);
