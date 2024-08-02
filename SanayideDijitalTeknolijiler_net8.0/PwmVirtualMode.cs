@@ -12,13 +12,23 @@ namespace SanayideDijitalTeknolijiler_net8._0
         {
                 GC.PreparePin(26,PinMode.Output);
                 GC.PreparePin(3,PinMode.Output);
+
                 GC.PreparePin(17,PinMode.Output);
                 GC.PreparePin(27,PinMode.Output);
+
+                GC.PreparePin(23,PinMode.Output);
+                GC.PreparePin(24,PinMode.Output);
+                //1.motor
                 VirtualPwm vpwm14=new VirtualPwm(14,100);
                 VirtualPwm vpwm15=new VirtualPwm(15,100);
-
+                //2.motor
                 VirtualPwm vpwm12 = new  VirtualPwm(12,100);
                 VirtualPwm vpwm18 = new VirtualPwm(13,100);
+
+                //linear
+                VirtualPwm vpm20 = new VirtualPwm(20,100);
+                VirtualPwm vpm21 = new VirtualPwm(21,100);
+
                 string previouskey=string.Empty;
             while(true){
                     
@@ -124,6 +134,33 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 if(key.Key == ConsoleKey.X){
                     Console.WriteLine("x pressed exiting ");
                     break;
+                }
+                if(key.Key ==ConsoleKey.P&& !(previouskey=="p")){
+                    //lınear push kaldır
+                    vpm20.Stop();
+                    vpm21.Stop();
+
+                    vpm20.SetPercent(100);
+                    vpm21.SetPercent(0);
+                    previouskey = "p";
+                }
+                if(key.Key ==ConsoleKey.P&& !(previouskey=="o")){
+                    //lınear stop durdur
+                    vpm20.Stop();
+                    vpm21.Stop();
+
+                    vpm20.SetPercent(0);
+                    vpm21.SetPercent(0);
+                    previouskey = "o";
+                }
+                if(key.Key ==ConsoleKey.P&& !(previouskey=="ı")){
+                    //lınear back indir
+                    vpm20.Stop();
+                    vpm21.Stop();
+
+                    vpm20.SetPercent(0);
+                    vpm21.SetPercent(100);
+                    previouskey = "ı";
                 }
 
             }
