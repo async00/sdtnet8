@@ -28,6 +28,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 {
                     vpwm14.Stop();
                     vpwm15.Stop();
+                    pwmclass12.Stop();
+                    pwmclass19.Stop();
                     GC.Write(26,PinValue.High);
                     GC.Write(3,PinValue.High);
                     GC.Write(17,PinValue.High);
@@ -107,8 +109,10 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 }
                 if (key.Key == ConsoleKey.Spacebar)
                 {
-                    Console.WriteLine("breaaak ");
-                    EngineDrivers.Engine_RESET();
+                    vpwm14.SetPercent(0);
+                    vpwm15.SetPercent(0);
+                    pwmclass12.Stop();
+                    pwmclass19.Stop();
                 }
                 if(key.Key == ConsoleKey.X){
                     Console.WriteLine("x pressed exiting ");

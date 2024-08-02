@@ -94,25 +94,21 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 var key = Console.ReadKey(intercept: true);
                 if (key.Key == ConsoleKey.W)
                 {
-                    GC.Write(2,PinValue.High);
+                    GC.Write(26,PinValue.High);
                     GC.Write(3,PinValue.High);
                     GC.Write(17,PinValue.High);
                     GC.Write(27,PinValue.High);
                     pwmclass12.SetDutyCycle(255);
                     pwmclass13.SetDutyCycle(0);
-                    pwmclass18.SetDutyCycle(255);
-                    pwmclass19.SetDutyCycle(0);
                     pwmclass12.Start();
                     pwmclass13.Start();
-                    pwmclass18.Start();
-                    pwmclass19.Start();
                     LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
                     
                 }
                 if (key.Key == ConsoleKey.A)
                 {
 
-                   GC.Write(2,PinValue.High);
+                   GC.Write(26,PinValue.High);
                     GC.Write(3,PinValue.High);
                     GC.Write(17,PinValue.High);
                     GC.Write(27,PinValue.High);
