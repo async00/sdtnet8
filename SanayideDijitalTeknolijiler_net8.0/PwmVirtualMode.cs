@@ -28,8 +28,6 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 {
                     vpwm14.Stop();
                     vpwm15.Stop();
-                    pwmclass12.Stop();
-                    pwmclass19.Stop();
                     GC.Write(26,PinValue.High);
                     GC.Write(3,PinValue.High);
                     GC.Write(17,PinValue.High);
