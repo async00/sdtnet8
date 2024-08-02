@@ -51,6 +51,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 }
                 if (key.Key == ConsoleKey.A&& !(previouskey=="a"))
                 {
+
                     vpwm14.Stop();
                     vpwm15.Stop();
                     vpwm12.Stop();
@@ -64,11 +65,13 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     //12 SA GMOTOR ILERI
                     //13 SAG MOTOER GERI 
                     vpwm14.SetPercent(0);
-                    vpwm15.SetPercent(50);
+                    vpwm15.SetPercent(35);
                     vpwm12.SetPercent(0);
-                    vpwm18.SetPercent(35);
+                    vpwm18.SetPercent(50);
                     LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
                     previouskey="a";
+
+                    
                 }
                 if (key.Key == ConsoleKey.S&& !(previouskey=="s"))
                 {
@@ -89,7 +92,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 }
                 if (key.Key == ConsoleKey.D&& !(previouskey=="d"))
                 {
-vpwm14.Stop();
+                    vpwm14.Stop();
                     vpwm15.Stop();
                     vpwm12.Stop();
                     vpwm18.Stop();
@@ -102,9 +105,9 @@ vpwm14.Stop();
                     //12 SA GMOTOR ILERI
                     //13 SAG MOTOER GERI 
                     vpwm14.SetPercent(0);
-                    vpwm15.SetPercent(35);
+                    vpwm15.SetPercent(50);
                     vpwm12.SetPercent(0);
-                    vpwm18.SetPercent(50);
+                    vpwm18.SetPercent(35);
                     LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
                     previouskey="a";
                     
@@ -113,7 +116,8 @@ vpwm14.Stop();
                 {
                     vpwm14.SetPercent(0);
                     vpwm15.SetPercent(0);
-
+                    vpwm12.SetPercent(0);
+                    vpwm18.SetPercent(0);
                 }
                 if(key.Key == ConsoleKey.X){
                     Console.WriteLine("x pressed exiting ");
