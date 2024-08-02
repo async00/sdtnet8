@@ -38,7 +38,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     vpwm14.SetPercent(100);
                     vpwm15.SetPercent(0);
                     vpwm12.SetPercent(0);
-                    vpwm18.SetPercent(255);
+                    vpwm18.SetPercent(100);
                     LogSys.InfoLog("pWWwm12 255 yazdir !! ILERI IIII  ");
                     previouskey="w";
                    
@@ -72,8 +72,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     //13 SAG MOTOER GERI 
                     vpwm14.SetPercent(0);
                     vpwm15.SetPercent(100);
-                    vpwm12.SetPercent(100);
-                    vpwm18.SetPercent(0);
+                    vpwm12.SetPercent(0);
+                    vpwm18.SetPercent(100);
                     LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
                     previouskey="s";
                 }
@@ -85,7 +85,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     GC.Write(17,PinValue.High);
                     GC.Write(27,PinValue.High);
 
-                  
+             
                     //12 SA GMOTOR ILERI
                     //13 SAG MOTOER GERI 
                     
