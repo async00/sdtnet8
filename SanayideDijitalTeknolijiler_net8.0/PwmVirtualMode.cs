@@ -137,6 +137,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 }
                 if(key.Key ==ConsoleKey.P&& !(previouskey=="p")){
                     //lınear push kaldır
+                    GC.Write(23,PinValue.High);
+                    GC.Write(24,PinValue.High);
                     vpm20.Stop();
                     vpm21.Stop();
 
@@ -147,6 +149,9 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 }
                 if(key.Key ==ConsoleKey.O&& !(previouskey=="o")){
                     //lınear stop durdur
+
+                     GC.Write(23,PinValue.High);
+                    GC.Write(24,PinValue.High);
                     vpm20.Stop();
                     vpm21.Stop();
 
@@ -157,6 +162,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 }
                 if(key.Key ==ConsoleKey.L&& !(previouskey=="l")){
                     //lınear back indir
+                     GC.Write(23,PinValue.High);
+                    GC.Write(24,PinValue.High); 
                     vpm20.Stop();
                     vpm21.Stop();
 
