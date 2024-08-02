@@ -143,8 +143,9 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     vpm20.SetPercent(100);
                     vpm21.SetPercent(0);
                     previouskey = "p";
+                    LogSys.ErrorLog("linear toggle");
                 }
-                if(key.Key ==ConsoleKey.P&& !(previouskey=="o")){
+                if(key.Key ==ConsoleKey.O&& !(previouskey=="o")){
                     //lınear stop durdur
                     vpm20.Stop();
                     vpm21.Stop();
@@ -152,15 +153,17 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     vpm20.SetPercent(0);
                     vpm21.SetPercent(0);
                     previouskey = "o";
+                      LogSys.ErrorLog("linear toggle");
                 }
-                if(key.Key ==ConsoleKey.P&& !(previouskey=="ı")){
+                if(key.Key ==ConsoleKey.L&& !(previouskey=="l")){
                     //lınear back indir
                     vpm20.Stop();
                     vpm21.Stop();
 
                     vpm20.SetPercent(0);
                     vpm21.SetPercent(100);
-                    previouskey = "ı";
+                    previouskey = "l";
+                      LogSys.ErrorLog("linear toggle");
                 }
 
             }
