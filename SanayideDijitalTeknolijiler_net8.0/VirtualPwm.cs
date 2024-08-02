@@ -23,10 +23,10 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
         public void SetPercent(int dutyCycle)
         {
-            if (dutyCycle < 0 || dutyCycle > 100)
-            {
-                throw new ArgumentOutOfRangeException("Duty cycle must be between 0 and 100");
+            if(dutyCycle ==255){
+                dutyCycle = 100;
             }
+
 
             this.dutyCycle = dutyCycle;
             int period = 1000 / frequency; // Period in milliseconds
