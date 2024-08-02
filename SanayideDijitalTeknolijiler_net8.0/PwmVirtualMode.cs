@@ -16,8 +16,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 GC.PreparePin(27,PinMode.Output);
                 VirtualPwm vpwm14=new VirtualPwm(14,100);
                 VirtualPwm vpwm15=new VirtualPwm(15,100);
-                var pwmclass12  = new PwmController(18,100);
-                var pwmclass19=new PwmController(19,100);
+                var pwmclass12  = new PwmController(12,100);
+                var pwmclass19=new PwmController(18,100);
                 string previouskey=string.Empty;
             while(true){
                     

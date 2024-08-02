@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SanayideDijitalTeknolijiler_net8.0")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+470d1f0e730b5e8f2c398ead02b96704a8a3430c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e570c0bfaf6ff80ffda569a060bec42079339322")]
 [assembly: System.Reflection.AssemblyProductAttribute("SanayideDijitalTeknolijiler_net8.0")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SanayideDijitalTeknolijiler_net8.0")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
