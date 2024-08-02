@@ -18,7 +18,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 VirtualPwm vpwm15=new VirtualPwm(15,100);
 
                 VirtualPwm vpwm12 = new  VirtualPwm(12,100);
-                VirtualPwm vpwm18 = new VirtualPwm(18,100);
+                VirtualPwm vpwm18 = new VirtualPwm(13,100);
                 string previouskey=string.Empty;
             while(true){
                     
