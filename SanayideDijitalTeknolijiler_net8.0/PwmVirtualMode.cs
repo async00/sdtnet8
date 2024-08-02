@@ -82,8 +82,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     GC.Write(27,PinValue.High);
                     vpwm14.SetPercent(50);
                     vpwm15.SetPercent(0);
-                    vpwm12.SetPercent(0);
-                    vpwm18.SetPercent(50);
+                    vpwm12.SetPercent(50);
+                    vpwm18.SetPercent(0);
                     LogSys.InfoLog("pWWwm12 255 yazdir !! ILERI IIII  ");
                     previouskey="s";
                 }
