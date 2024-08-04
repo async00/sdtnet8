@@ -285,6 +285,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 if (key.Key == ConsoleKey.Spacebar)
                 {
                     PWM_STOP();
+                    previouskey="";
                 }
                 if(key.Key == ConsoleKey.X){
                     Console.WriteLine("x pressed exiting ");
