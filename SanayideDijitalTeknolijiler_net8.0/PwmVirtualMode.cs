@@ -117,7 +117,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
 
         }
-         internal static void PWM_RİGHT_SYNC(int sagmotor=25,int solmotor=75){
+         internal static void PWM_RİGHT_SYNC(int sagmotor=43,int solmotor=65){
                     Xvpwm14.Stop();
                     Xvpwm15.Stop();
                     Xvpwm12.Stop();
@@ -138,7 +138,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
 
         }
-        internal static void PWM_LEFT_SYNC(int sagmotor=75,int solmotor=25){
+        internal static void PWM_LEFT_SYNC(int sagmotor=65,int solmotor=43){
                     Xvpwm14.Stop();
                     Xvpwm15.Stop();
                     Xvpwm12.Stop();
@@ -171,8 +171,6 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
         internal static void  Start()
         {
-            int speedcountA=0;
-            int speedcountD=0;
                 GC.PreparePin(26,PinMode.Output);
                 GC.PreparePin(3,PinMode.Output);
 
@@ -202,35 +200,40 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 {
                     PWM_FORWARD();
                     previouskey="w";
-                    speedcountA=0;
-                    speedcountD=0;
-                   
-                   
-                }
-                if (key.Key == ConsoleKey.A)
-                {
-                    speedcountA++;
-                    PWM_LEFT_SYNC(37,37+speedcountA);
-                    Thread.Sleep(5);                    
-                }
-                if(key.Key == ConsoleKey.C){
-                                        speedcountA=0;
-                    speedcountD=0;
 
+                   
+                   
+                }
+                if (key.Key == ConsoleKey.A&& !(previouskey=="a"))
+                {
+
+                     PWM_LEFT();
+                    
+                    previouskey="a";
+                    
+
+                    
                 }
                 if (key.Key == ConsoleKey.S&& !(previouskey=="s"))
                 {PWM_BACKWARD();
-                    speedcountA=0;
-                    speedcountD=0;
                     LogSys.InfoLog("pWWwm12 255 yazdir !! ILERI IIII  ");
                     previouskey="s";
                 }
                 if (key.Key == ConsoleKey.D&& !(previouskey=="d"))
                 {
-                    speedcountD++;
-                   PWM_RİGHT_SYNC(37,37+speedcountD);
-                    Thread.Sleep(5);
+                   PWM_RİGHT();
+                    previouskey="d";
                     
+                }
+                if(key.Key==ConsoleKey.Z&& !(previouskey=="z")){
+                    PWM_LEFT_SYNC();
+                    previouskey= "z";
+
+                }
+                if(key.Key==ConsoleKey.Z&& !(previouskey=="c")){
+                    PWM_RİGHT_SYNC();
+                    previouskey= "c";
+
                 }
                 if (key.Key == ConsoleKey.Spacebar)
                 {
