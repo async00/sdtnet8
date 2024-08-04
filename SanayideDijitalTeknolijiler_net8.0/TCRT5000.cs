@@ -140,22 +140,22 @@ namespace SanayideDijitalTeknolijiler_net8._0
            
         }
         internal static void ListenPins(){  
-            GC.PreparePin(26,PinMode.Input);
-            GC.PreparePin(19,PinMode.Input);
-            GC.PreparePin(13,PinMode.Input);
-            GC.PreparePin(3,PinMode.Input);
-            GC.PreparePin(4,PinMode.Input);
+            GC.PreparePin(25,PinMode.Input);
+            GC.PreparePin(8,PinMode.Input);
+            GC.PreparePin(7,PinMode.Input);
+            GC.PreparePin(1,PinMode.Input);
+            GC.PreparePin(16,PinMode.Input);
 
 
 
             while(1==1){
             Thread.Sleep(30);
             
-                Program.lrpin1=GC.ReadPin(26);
-                Program.lrpin2=GC.ReadPin(19);
-                Program.lrpin3=GC.ReadPin(13);
-                Program.lrpin4=GC.ReadPin(3);
-                Program.lrpin5=GC.ReadPin(4);
+                Program.lrpin1=GC.ReadPin(25);
+                Program.lrpin2=GC.ReadPin(8);
+                Program.lrpin3=GC.ReadPin(7);
+                Program.lrpin4=GC.ReadPin(1);
+                Program.lrpin5=GC.ReadPin(16);
          
 
 
@@ -171,12 +171,12 @@ namespace SanayideDijitalTeknolijiler_net8._0
             //preapare pins 2  3  4  14 15
             //debug için string döndür 
             string wreturn=string.Empty;
-            GC.PreparePin(26,PinMode.Input);
-            GC.PreparePin(19,PinMode.Input);
-            GC.PreparePin(13,PinMode.Input);
-            GC.PreparePin(3,PinMode.Input);
-            GC.PreparePin(4,PinMode.Input);
-            int[] pins = { 25,8,7,5,16 };
+            GC.PreparePin(25,PinMode.Input);
+            GC.PreparePin(8,PinMode.Input);
+            GC.PreparePin(7,PinMode.Input);
+            GC.PreparePin(1,PinMode.Input);
+            GC.PreparePin(16,PinMode.Input);
+            int[] pins = { 25,8,7,1,16 };
             Console.Clear();
             wreturn+="TCRT5000 Sensör Okumaları:";
             wreturn+="--------------------------";      
