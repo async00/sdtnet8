@@ -50,9 +50,15 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 }
                 else
                 {
-                    controller.Write(pin, PinValue.High);
+                    try{
+controller.Write(pin, PinValue.High);
                     isHigh = true;
                     pwmTimer.Change(onTime, Timeout.Infinite);
+                    }catch(Exception ex){
+                        Stop();
+                        LogSys.ErrorLog("55.line hatası :((" + ex.Message);
+                    }
+                    
                 }
             }
         }
