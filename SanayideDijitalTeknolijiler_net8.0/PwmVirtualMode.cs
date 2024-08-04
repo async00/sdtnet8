@@ -227,10 +227,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 }
                 if (key.Key == ConsoleKey.Spacebar)
                 {
-                    vpwm14.SetPercent(0);
-                    vpwm15.SetPercent(0);
-                    vpwm12.SetPercent(0);
-                    vpwm18.SetPercent(0);
+                    PWM_STOP();
                 }
                 if(key.Key == ConsoleKey.X){
                     Console.WriteLine("x pressed exiting ");
