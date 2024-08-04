@@ -80,6 +80,16 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     TCRT5000.BeastMode();
                     
                 }
+                else if(message == "tcrtmode"){
+                    while(true){
+                        TCRT5000.WriteAllPins();
+                        var key = Console.ReadKey(intercept: true);
+                if (key.Key == ConsoleKey.X)
+                {
+                    break;
+                }
+                    }
+                }
                 else if (message== "pwmoff"){
                     pwmclass12.Stop();
                     pwmclass18.Stop();
@@ -96,9 +106,9 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     while(true){
                      if (Console.KeyAvailable)
             {
-                var key = Console.ReadKey(intercept: true);
+               var key = Console.ReadKey(intercept: true);
                 if (key.Key == ConsoleKey.W)
-                {
+                { 
                     GC.Write(26,PinValue.High);
                     GC.Write(3,PinValue.High);
                     GC.Write(17,PinValue.High);
