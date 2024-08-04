@@ -59,6 +59,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
         public void Stop()
         {
+            this.SetPercent(0);
             if (pwmTimer != null)
             {
                 pwmTimer.Dispose();
