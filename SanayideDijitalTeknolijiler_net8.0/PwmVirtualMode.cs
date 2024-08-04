@@ -46,15 +46,15 @@ namespace SanayideDijitalTeknolijiler_net8._0
                   
                     //12 SA GMOTOR ILERI
                     //13 SAG MOTOER GERI 
-                    Xvpwm14.SetPercent(100);
+                    Xvpwm14.SetPercent(50);
                     Xvpwm15.SetPercent(0);
-                    Xvpwm12.SetPercent(100);
+                    Xvpwm12.SetPercent(50 );
                     Xvpwm18.SetPercent(0);
                     LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
 
 
         }
-          internal static void PWM_LEFT(int sagmotor = 75,int solmotor=75){
+          internal static void PWM_LEFT(int sagmotor = 37,int solmotor=37){
                     Xvpwm14.Stop();
                     Xvpwm15.Stop();
                     Xvpwm12.Stop();
@@ -89,14 +89,14 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     //12 SA GMOTOR ILERI
                     //13 SAG MOTOER GERI 
                     Xvpwm14.SetPercent(0);
-                    Xvpwm15.SetPercent(75);
+                    Xvpwm15.SetPercent(50);
                     Xvpwm12.SetPercent(0);
-                    Xvpwm18.SetPercent(75);
+                    Xvpwm18.SetPercent(50);
                     LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
 
 
         }
-         internal static void PWM_RİGHT(int sagmotor=75,int solmotor=75){
+         internal static void PWM_RİGHT(int sagmotor=37,int solmotor=37){
                     Xvpwm14.Stop();
                     Xvpwm15.Stop();
                     Xvpwm12.Stop();
