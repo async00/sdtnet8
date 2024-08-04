@@ -34,10 +34,15 @@ namespace SanayideDijitalTeknolijiler_net8._0
         }
 
         internal static void PWM_FORWARD(){
-                    Xvpwm14.Stop();
+                      try{
+                  Xvpwm14.Stop();
                     Xvpwm15.Stop();
                     Xvpwm12.Stop();
                     Xvpwm18.Stop();
+            }catch(Exception ex){
+
+            }
+                
                     GC.Write(26,PinValue.High);
                     GC.Write(3,PinValue.High);
                     GC.Write(17,PinValue.High);
@@ -55,10 +60,15 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
         }
           internal static void PWM_LEFT(int sagmotor = 37,int solmotor=37){
-                    Xvpwm14.Stop();
+                      try{
+                  Xvpwm14.Stop();
                     Xvpwm15.Stop();
                     Xvpwm12.Stop();
                     Xvpwm18.Stop();
+            }catch(Exception ex){
+
+            }
+                
                     GC.Write(26,PinValue.High);
                     GC.Write(3,PinValue.High);
                     GC.Write(17,PinValue.High);
@@ -76,10 +86,15 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
         }
            internal static void PWM_BACKWARD(){
-                    Xvpwm14.Stop();
+                       try{
+                  Xvpwm14.Stop();
                     Xvpwm15.Stop();
                     Xvpwm12.Stop();
                     Xvpwm18.Stop();
+            }catch(Exception ex){
+
+            }
+                
                     GC.Write(26,PinValue.High);
                     GC.Write(3,PinValue.High);
                     GC.Write(17,PinValue.High);
@@ -97,10 +112,15 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
         }
          internal static void PWM_RİGHT(int sagmotor=37,int solmotor=37){
-                    Xvpwm14.Stop();
+            try{
+                  Xvpwm14.Stop();
                     Xvpwm15.Stop();
                     Xvpwm12.Stop();
                     Xvpwm18.Stop();
+            }catch(Exception ex){
+
+            }
+                  
                     GC.Write(26,PinValue.High);
                     GC.Write(3,PinValue.High);
                     GC.Write(17,PinValue.High);
@@ -118,10 +138,15 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
         }
          internal static void PWM_RİGHT_SYNC(int sagmotor=43,int solmotor=65){
-                    Xvpwm14.Stop();
+                      try{
+                  Xvpwm14.Stop();
                     Xvpwm15.Stop();
                     Xvpwm12.Stop();
                     Xvpwm18.Stop();
+            }catch(Exception ex){
+
+            }
+                
                     GC.Write(26,PinValue.High);
                     GC.Write(3,PinValue.High);
                     GC.Write(17,PinValue.High);
@@ -139,10 +164,15 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
         }
         internal static void PWM_LEFT_SYNC(int sagmotor=65,int solmotor=43){
-                    Xvpwm14.Stop();
+                      try{
+                  Xvpwm14.Stop();
                     Xvpwm15.Stop();
                     Xvpwm12.Stop();
                     Xvpwm18.Stop();
+            }catch(Exception ex){
+
+            }
+                
                     GC.Write(26,PinValue.High);
                     GC.Write(3,PinValue.High);
                     GC.Write(17,PinValue.High);
@@ -160,10 +190,15 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
         }
         internal static void PWM_STOP(){
-                    Xvpwm14.SetPercent(0);
-                    Xvpwm15.SetPercent(0);
-                    Xvpwm12.SetPercent(0);
-                    Xvpwm18.SetPercent(0);
+                       try{
+                  Xvpwm14.Stop();
+                    Xvpwm15.Stop();
+                    Xvpwm12.Stop();
+                    Xvpwm18.Stop();
+            }catch(Exception ex){
+
+            }
+                
         }
         //linear
 
