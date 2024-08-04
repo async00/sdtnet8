@@ -120,22 +120,24 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
 
             //normal dönüş
-             if(Program.lrpin1==1 && Program.lrpin2==1){
+             if(TCRT5000.SpesificLineRead(1)==1 && SpesificLineRead(2)==1){
                     Console.WriteLine("sağcı ferhat");
                    PwmVirtualMode.PWM_RİGHT();
                    
                 }
-                if(Program.lrpin4==1 && Program.lrpin5==1){
+                if(SpesificLineRead(4)==1 && SpesificLineRead(5)==1){
                      Console.WriteLine("solcu ferhat");
                     PwmVirtualMode.PWM_LEFT();
                 }
-                if(Program.lrpin3==1){
+                if(SpesificLineRead(3)==1){
                     Console.WriteLine("merkeziyetçi ferhat");
                     PwmVirtualMode.PWM_FORWARD();
                 }
                 count=0;
                 lastpin=0;
+                 Thread.Sleep(80);
             }
+           
         }
         internal static void ListenPins(){  
             GC.PreparePin(26,PinMode.Input);
