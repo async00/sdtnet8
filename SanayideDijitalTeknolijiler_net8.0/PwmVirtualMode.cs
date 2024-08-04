@@ -198,23 +198,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 var key = Console.ReadKey(intercept: true);
                 if (key.Key == ConsoleKey.W && !(previouskey=="w"))
                 {
-                    vpwm14.Stop();
-                    vpwm15.Stop();
-                    vpwm12.Stop();
-                    vpwm18.Stop();
-                    GC.Write(26,PinValue.High);
-                    GC.Write(3,PinValue.High);
-                    GC.Write(17,PinValue.High);
-                    GC.Write(27,PinValue.High);
-
-                  
-                    //12 SA GMOTOR ILERI
-                    //13 SAG MOTOER GERI 
-                    vpwm14.SetPercent(0);
-                    vpwm15.SetPercent(75);
-                    vpwm12.SetPercent(0);
-                    vpwm18.SetPercent(75);
-                    LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
+                    PWM_FORWARD();
                     previouskey="w";
 
                    
@@ -223,23 +207,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 if (key.Key == ConsoleKey.A&& !(previouskey=="a"))
                 {
 
-                     vpwm14.Stop();
-                    vpwm15.Stop();
-                    vpwm12.Stop();
-                    vpwm18.Stop();
-                    GC.Write(26,PinValue.High);
-                    GC.Write(3,PinValue.High);
-                    GC.Write(17,PinValue.High);
-                    GC.Write(27,PinValue.High);
-
-                  
-                    //12 SA GMOTOR ILERI
-                    //13 SAG MOTOER GERI 
-                    vpwm14.SetPercent(0);
-                    vpwm15.SetPercent(75);
-                    vpwm12.SetPercent(0);
-                    vpwm18.SetPercent(25);
-                    LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
+                     PWM_LEFT();
                     previouskey="a";
 
                     
@@ -247,41 +215,13 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     
                 }
                 if (key.Key == ConsoleKey.S&& !(previouskey=="s"))
-                {
-                    vpwm14.Stop();
-                    vpwm15.Stop();
-                    vpwm12.Stop();
-                    vpwm18.Stop();
-                    GC.Write(26,PinValue.High);
-                    GC.Write(3,PinValue.High);
-                    GC.Write(17,PinValue.High);
-                    GC.Write(27,PinValue.High);
-                    vpwm14.SetPercent(75);
-                    vpwm15.SetPercent(0);
-                    vpwm12.SetPercent(75);
-                    vpwm18.SetPercent(0);
+                {PWM_BACKWARD();
                     LogSys.InfoLog("pWWwm12 255 yazdir !! ILERI IIII  ");
                     previouskey="s";
                 }
                 if (key.Key == ConsoleKey.D&& !(previouskey=="d"))
                 {
-                   vpwm14.Stop();
-                    vpwm15.Stop();
-                    vpwm12.Stop();
-                    vpwm18.Stop();
-                    GC.Write(26,PinValue.High);
-                    GC.Write(3,PinValue.High);
-                    GC.Write(17,PinValue.High);
-                    GC.Write(27,PinValue.High);
-
-                  
-                    //12 SA GMOTOR ILERI
-                    //13 SAG MOTOER GERI 
-                    vpwm14.SetPercent(0);
-                    vpwm15.SetPercent(25);
-                    vpwm12.SetPercent(0);
-                    vpwm18.SetPercent(75);
-                    LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
+                   PWM_RİGHT();
                     previouskey="d";
                     
                 }
