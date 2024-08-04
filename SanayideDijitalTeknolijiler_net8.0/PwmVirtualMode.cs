@@ -264,9 +264,11 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 if(key.Key==ConsoleKey.B&& !(previouskey=="b")){
                 // korna çal
                     if(!hornstatus){
-                         GC.Write(2,PinValue.High);
+                         GC.Write(10,PinValue.High);
+                         hornstatus=true;
                     }else{
-                        GC.Write(2,PinValue.Low);
+                        hornstatus=false;
+                        GC.Write(10,PinValue.Low);
                     }
                     LogSys.SuccesLog("Horny beytullah");
                     previouskey= "b";
