@@ -181,10 +181,10 @@ namespace SanayideDijitalTeknolijiler_net8._0
                   
                     //12 SA GMOTOR ILERI
                     //13 SAG MOTOER GERI 
-                    Xvpwm14.SetPercent(sagmotor);
-                    Xvpwm15.SetPercent(0);
-                    Xvpwm12.SetPercent(solmotor);
-                    Xvpwm18.SetPercent(0);
+                    Xvpwm14.SetPercent(0);
+                    Xvpwm15.SetPercent(sagmotor);
+                    Xvpwm12.SetPercent(0);
+                    Xvpwm18.SetPercent(solmotor);
                     LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
 
 
@@ -265,7 +265,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     previouskey= "z";
 
                 }
-                if(key.Key==ConsoleKey.Z&& !(previouskey=="c")){
+                if(key.Key==ConsoleKey.C&& !(previouskey=="c")){
                     PWM_RİGHT_SYNC();
                     previouskey= "c";
 
