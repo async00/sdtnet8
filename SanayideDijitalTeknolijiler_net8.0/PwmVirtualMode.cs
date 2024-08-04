@@ -207,6 +207,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
         internal static void  Start()
         {
                 bool hornstatus=false;
+                GC.PreparePin(22,PinMode.Output);
                 GC.PreparePin(26,PinMode.Output);
                 GC.PreparePin(3,PinMode.Output);
 
