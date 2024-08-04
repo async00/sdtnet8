@@ -176,7 +176,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
             GC.PreparePin(13,PinMode.Input);
             GC.PreparePin(3,PinMode.Input);
             GC.PreparePin(4,PinMode.Input);
-            int[] pins = { 26,19,13,3,4 };
+            int[] pins = { 25,8,7,5,16 };
             Console.Clear();
             wreturn+="TCRT5000 Sensör Okumaları:";
             wreturn+="--------------------------";      
