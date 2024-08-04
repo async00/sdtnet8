@@ -75,6 +75,11 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 else if(message == "virtualmode"){
                     PwmVirtualMode.Start();
                 }
+                else if(message=="beastmode"){
+                    PwmVirtualMode.PWM_BEGİN();
+                    TCRT5000.BeastMode();
+                    
+                }
                 else if (message== "pwmoff"){
                     pwmclass12.Stop();
                     pwmclass18.Stop();
