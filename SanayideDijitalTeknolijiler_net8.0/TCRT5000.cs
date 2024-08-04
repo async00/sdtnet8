@@ -191,7 +191,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
             foreach (var pin in pins)
             {
                 var value = GC.ReadPin(pin);
-                Console.WriteLine($"| {pin,3} | {(value == 1 ? "Cizgi Yok" : "Cizgi Var"),-15} |");
+                Console.WriteLine($"{pin}||{value}");
                 wreturn+=$"| {pin,3} | {(value == 1 ? "Cizgi Yok" : "Cizgi Var"),-15} |";
             }
             wreturn+="--------------------------";
