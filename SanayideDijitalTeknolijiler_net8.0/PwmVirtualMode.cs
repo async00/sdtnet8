@@ -55,7 +55,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     Xvpwm15.SetPercent(0);
                     Xvpwm12.SetPercent(43 );
                     Xvpwm18.SetPercent(0);
-                    LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
+                    LogSys.InfoLog("PWMFORWARD");
 
 
         }
@@ -81,7 +81,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     Xvpwm15.SetPercent(0);
                     Xvpwm12.SetPercent(0);
                     Xvpwm18.SetPercent(solmotor);
-                    LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
+                    LogSys.InfoLog("PWM LEFT  ");
 
 
         }
@@ -107,7 +107,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     Xvpwm15.SetPercent(50);
                     Xvpwm12.SetPercent(0);
                     Xvpwm18.SetPercent(43);
-                    LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
+                    LogSys.InfoLog("PWM BACK");
 
 
         }
@@ -133,7 +133,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     Xvpwm15.SetPercent(sagmotor);
                     Xvpwm12.SetPercent(solmotor);
                     Xvpwm18.SetPercent(0);
-                    LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
+                    LogSys.InfoLog("PWM RİGHT");
 
 
         }
@@ -206,6 +206,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
         internal static void  Start()
         {
+                bool hornstatus=false;
                 GC.PreparePin(26,PinMode.Output);
                 GC.PreparePin(3,PinMode.Output);
 
@@ -235,7 +236,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 {
                     PWM_FORWARD();
                     previouskey="w";
-
+                    
                    
                    
                 }
@@ -259,6 +260,17 @@ namespace SanayideDijitalTeknolijiler_net8._0
                    PWM_RİGHT();
                     previouskey="d";
                     
+                }
+                if(key.Key==ConsoleKey.B&& !(previouskey=="b")){
+                // korna çal
+                    if(!hornstatus){
+                         GC.Write(2,PinValue.High);
+                    }else{
+                        GC.Write(2,PinValue.Low);
+                    }
+                    LogSys.SuccesLog("Horny beytullah");
+                    previouskey= "b";
+
                 }
                 if(key.Key==ConsoleKey.Z&& !(previouskey=="z")){
                     PWM_LEFT_SYNC();
@@ -288,7 +300,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     vpm20.SetPercent(100);
                     vpm21.SetPercent(0);
                     previouskey = "p";
-                    LogSys.ErrorLog("linear toggle");
+                    LogSys.ErrorLog("linear push");
                 }
                 if(key.Key ==ConsoleKey.O&& !(previouskey=="o")){
                     //lınear stop durdur
@@ -301,7 +313,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     vpm20.SetPercent(0);
                     vpm21.SetPercent(0);
                     previouskey = "o";
-                      LogSys.ErrorLog("linear toggle");
+                      LogSys.ErrorLog("linear stop");
                 }
                 if(key.Key ==ConsoleKey.L&& !(previouskey=="l")){
                     //lınear back indir
@@ -313,7 +325,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     vpm20.SetPercent(0);
                     vpm21.SetPercent(100);
                     previouskey = "l";
-                      LogSys.ErrorLog("linear toggle");
+                      LogSys.ErrorLog("linear back");
                 }
 
             }
