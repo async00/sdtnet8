@@ -48,7 +48,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     //13 SAG MOTOER GERI 
                     Xvpwm14.SetPercent(50);
                     Xvpwm15.SetPercent(0);
-                    Xvpwm12.SetPercent(40 );
+                    Xvpwm12.SetPercent(43 );
                     Xvpwm18.SetPercent(0);
                     LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
 
@@ -91,7 +91,7 @@ namespace SanayideDijitalTeknolijiler_net8._0
                     Xvpwm14.SetPercent(0);
                     Xvpwm15.SetPercent(50);
                     Xvpwm12.SetPercent(0);
-                    Xvpwm18.SetPercent(40);
+                    Xvpwm18.SetPercent(43);
                     LogSys.InfoLog("pwm12 255 yazdir !! ILERI IIII  ");
 
 
@@ -171,6 +171,8 @@ namespace SanayideDijitalTeknolijiler_net8._0
 
         internal static void  Start()
         {
+            int speedcountA=0;
+            int speedcountD=0;
                 GC.PreparePin(26,PinMode.Output);
                 GC.PreparePin(3,PinMode.Output);
 
@@ -200,29 +202,34 @@ namespace SanayideDijitalTeknolijiler_net8._0
                 {
                     PWM_FORWARD();
                     previouskey="w";
-
+                    speedcountA=0;
+                    speedcountD=0;
                    
                    
                 }
-                if (key.Key == ConsoleKey.A&& !(previouskey=="a"))
+                if (key.Key == ConsoleKey.A)
                 {
+                    speedcountA++;
+                    PWM_LEFT_SYNC(37,37+speedcountA);
+                    Thread.Sleep(5);                    
+                }
+                if(key.Key == ConsoleKey.C){
+                                        speedcountA=0;
+                    speedcountD=0;
 
-                     PWM_LEFT();
-                    previouskey="a";
-
-                    
-
-                    
                 }
                 if (key.Key == ConsoleKey.S&& !(previouskey=="s"))
                 {PWM_BACKWARD();
+                    speedcountA=0;
+                    speedcountD=0;
                     LogSys.InfoLog("pWWwm12 255 yazdir !! ILERI IIII  ");
                     previouskey="s";
                 }
                 if (key.Key == ConsoleKey.D&& !(previouskey=="d"))
                 {
-                   PWM_RİGHT();
-                    previouskey="d";
+                    speedcountD++;
+                   PWM_RİGHT_SYNC(37,37+speedcountD);
+                    Thread.Sleep(5);
                     
                 }
                 if (key.Key == ConsoleKey.Spacebar)
